@@ -1,11 +1,13 @@
-# barcode_scanner
+# Сканнер штрих-кодов
 
-IOS и Android клиент для тестового приложения-сканнера штрих-кодов
+IOS/Android клиент на Flutter для тестового приложения-сканнера штрих-кодов
 
 ## Запуск
 
 1. Скачать Backend часть приложения: 
-TO-DO: Link to Backend
+
+https://github.com/antonzyryanov/Barcode-Scanner-Backend.git
+
 2. Установить NodeJS при необходимости
 3. Открыть проект Backend части в VSCode , запустить NodeJS сервер одной из двух команд:
 
@@ -21,8 +23,6 @@ TO-DO: Link to Backend
 7. Ввести "flutter run" для сборки и запуска
 
 ## Штрих-коды для Manual тестов
-
-The following barcode images are used for manual testing:
 
 ### Barcode 1
 ![Barcode 1](manual%20tests/barcodes/barcode_1.jpg)
@@ -88,7 +88,7 @@ The following barcode images are used for manual testing:
 
 8. Применение принципа Interface Segregation Principle:
 
-В классе GoodsInStockMockRepository нет полей serverIP и serverPort потому что они там не нужны. Соответсвенно и в общем протоколе GoodsInStockRepositoryProtocol их нет, а есть только метод необходимый обоим имплементациям.
+В классе GoodsInStockMockRepository нет полей serverIP и serverPort потому что они там не нужны. Соответсвенно и в общем протоколе GoodsInStockRepositoryProtocol их нет, а есть только метод необходимый обеим имплементациям.
 
 9. Применение принципа Dependency Inversion Principle:
 
@@ -108,7 +108,7 @@ The following barcode images are used for manual testing:
 Тесты сгенерированы ИИ агентом
 После проведен аудит всех тестов, вручную проверено, фейлятся ли они при неподходящих вводных
 
-## Скриншоты выполненных мануальных тестов
+## Скриншоты проверки адекватности unit тестов
 
 ### Manual Test Screen 1
 ![Manual Test 1](manual%20tests/made%20manual%20tests%20screens/manual_test_1.jpg)
