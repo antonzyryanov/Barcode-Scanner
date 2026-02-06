@@ -91,7 +91,7 @@ https://github.com/antonzyryanov/Barcode-Scanner-Backend.git
 
 ## Видео выполненных мануальных тестов на обеих платформах:
 
-
+https://drive.google.com/drive/folders/1pdoobQEN1ZoZ0jdwCH0acMS6egbV-kFs?usp=sharing
 
 ## Описание создания проекта и пояснения по поводу выбранных в процессе решений
 
