@@ -10,7 +10,7 @@ class BarcodeScannerPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Set camera on barcode'),
+        title: const Text('Point to barcode'),
         leading: IconButton(
           onPressed: () => Navigator.pop(context, '-1'),
           icon: const Icon(Icons.close),

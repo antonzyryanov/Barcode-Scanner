@@ -28,7 +28,9 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
     on<SetScanResultEvent>((event, emit) async {
       emit(MainScanResult(event.result));
-      await _dataLayerBloc.retrieveData(event.result);
+      Future.delayed(const Duration(seconds: 3), () async {
+        await _dataLayerBloc.retrieveData(event.result);
+      });
     });
 
     on<DataLayerDataLoaded>((event, emit) {
