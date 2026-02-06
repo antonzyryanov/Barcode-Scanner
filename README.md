@@ -1,6 +1,6 @@
-# Сканнер штрих-кодов
+# Сканнер штрихкодов
 
-IOS/Android клиент на Flutter для тестового приложения-сканнера штрих-кодов
+IOS/Android клиент на Flutter для тестового приложения-сканнера штрихкодов
 
 ## Запуск
 
@@ -54,7 +54,7 @@ https://github.com/antonzyryanov/Barcode-Scanner-Backend.git
 ### App Screenshot 10
 ![App Screenshot 10](app%20screenshots/screen_10.jpg)
 
-## Штрих-коды для Manual тестов
+## Штрихкоды для Manual тестов
 
 ### Barcode 1
 ![Barcode 1](manual%20tests/barcodes/barcode_1.jpg)
