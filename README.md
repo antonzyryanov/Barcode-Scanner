@@ -22,6 +22,38 @@ https://github.com/antonzyryanov/Barcode-Scanner-Backend.git
 6. Ввести "flutter pub get" для загрузки зависимостей
 7. Ввести "flutter run" для сборки и запуска
 
+## Скриншоты приложения
+
+### App Screenshot 1
+![App Screenshot 1](app%20screenshots/screen_1.jpg)
+
+### App Screenshot 2
+![App Screenshot 2](app%20screenshots/screen_2.jpg)
+
+### App Screenshot 3
+![App Screenshot 3](app%20screenshots/screen_3.jpg)
+
+### App Screenshot 4
+![App Screenshot 4](app%20screenshots/screen_4.jpg)
+
+### App Screenshot 5
+![App Screenshot 5](app%20screenshots/screen_5.jpg)
+
+### App Screenshot 6
+![App Screenshot 6](app%20screenshots/screen_6.jpg)
+
+### App Screenshot 7
+![App Screenshot 7](app%20screenshots/screen_7.jpg)
+
+### App Screenshot 8
+![App Screenshot 8](app%20screenshots/screen_8.jpg)
+
+### App Screenshot 9
+![App Screenshot 9](app%20screenshots/screen_9.jpg)
+
+### App Screenshot 10
+![App Screenshot 10](app%20screenshots/screen_10.jpg)
+
 ## Штрих-коды для Manual тестов
 
 ### Barcode 1
