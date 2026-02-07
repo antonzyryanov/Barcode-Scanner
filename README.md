@@ -143,28 +143,28 @@ https://drive.google.com/drive/folders/1pdoobQEN1ZoZ0jdwCH0acMS6egbV-kFs?usp=sha
 ## Скриншоты проверки адекватности unit тестов
 
 ### Manual Test Screen 1
-![Manual Test 1](manual%20tests/made%20manual%20tests%20screens/manual_test_1.jpg)
+![Manual Test 1](manual%20tests/unit%20tests/manual_test_1.jpg)
 
 ### Manual Test Screen 2
-![Manual Test 2](manual%20tests/made%20manual%20tests%20screens/manual_test_2.jpg)
+![Manual Test 2](manual%20tests/unit%20tests/manual_test_2.jpg)
 
 ### Manual Test Screen 3
-![Manual Test 3](manual%20tests/made%20manual%20tests%20screens/manual_test_3.jpg)
+![Manual Test 3](manual%20tests/unit%20tests/manual_test_3.jpg)
 
 ### Manual Test Screen 4
-![Manual Test 4](manual%20tests/made%20manual%20tests%20screens/manual_test_4.jpg)
+![Manual Test 4](manual%20tests/unit%20tests/manual_test_4.jpg)
 
 ### Manual Test Screen 5
-![Manual Test 5](manual%20tests/made%20manual%20tests%20screens/manual_test_5.jpg)
+![Manual Test 5](manual%20tests/unit%20tests/manual_test_5.jpg)
 
 ### Manual Test Screen 6
-![Manual Test 6](manual%20tests/made%20manual%20tests%20screens/manual_test_6.jpg)
+![Manual Test 6](manual%20tests/unit%20tests/manual_test_6.jpg)
 
 ### Manual Test Screen 7
-![Manual Test 7](manual%20tests/made%20manual%20tests%20screens/manual_test_7.jpg)
+![Manual Test 7](manual%20tests/unit%20tests/manual_test_7.jpg)
 
 ### Manual Test Screen 8
-![Manual Test 8](manual%20tests/made%20manual%20tests%20screens/manual_test_8.jpg)
+![Manual Test 8](manual%20tests/unit%20tests/manual_test_8.jpg)
 
 
 14. UI/UX принципы 
@@ -281,9 +281,13 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Отступы, шрифты и размеры иконок стандартизированы. Их значения вынесены в отдельные файлы: spacing_config.dart, typography_config.dart, icon_sizing_config.dart
 
 ## Скриншоты мануальных тестов CI
-![CI Manual Test 1](manual%20tests/ci%20manual%20tests/ci_test_1.jpg)
-![CI Manual Test 2](manual%20tests/ci%20manual%20tests/ci_test_2.jpg)
-![CI Manual Test 3](manual%20tests/ci%20manual%20tests/ci_test_3.jpg)
+![CI Manual Test 1](manual%20tests/ci/ci_test_1.jpg)
+![CI Manual Test 2](manual%20tests/ci/ci_test_2.jpg)
+![CI Manual Test 3](manual%20tests/ci/ci_test_3.jpg)
+
+## Скриншоты мануального теста кейса ввода заказчиком длинных полей на сервере
+![Long Input Test 1](manual%20tests/long%20input/long_input_test1.jpg)
+![Long Input Test 2](manual%20tests/long%20input/long_input_test2.jpg)
 
 ## Документация к анимациям проекта:
 

@@ -94,11 +94,15 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
         return ShopItem(
           imageUrl:
               'https://sneakernews.com/wp-content/uploads/2016/07/air-jordan-9-kobe-bryant-pe-2016.jpg',
-          name: 'Jordan 9 Lakers',
+          name:
+              'Jordan 9 Lakers very very long name test very very long name test very very long name test very very long name test',
           sizesInStock: {
-            '7 US': 0,
-            '8 US': 0,
-            '9 US': 0,
+            '7 US very very long name test very very long name test very very long name test':
+                0,
+            '8 US very very long name test very very long name test very very long name test':
+                0,
+            '9 US very very long name test very very long name test very very long name test':
+                4123412341234123453,
             '10 US': 0,
             '11 US': 1,
             '12 US': 0,

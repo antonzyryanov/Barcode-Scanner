@@ -34,7 +34,7 @@ class ShopItemWidget extends StatelessWidget {
             child: Image.network(
               state.shopItem?.imageUrl ?? '',
               width: double.infinity,
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
               height: imageHeight,
               alignment: Alignment.center,
               loadingBuilder: (context, child, loadingProgress) {
