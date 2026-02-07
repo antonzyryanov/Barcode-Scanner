@@ -209,9 +209,9 @@ https://drive.google.com/drive/folders/1pdoobQEN1ZoZ0jdwCH0acMS6egbV-kFs?usp=sha
 
 ## Continuous Integration (CI)
 
-### Automated Testing and Git Push
+### Автоматизированное тестирование и Push в Git
 
-This project includes CI automation to ensure code quality by running tests before pushing to git.
+Этот проект включает автоматизацию CI для обеспечения качества кода путём выполнения тестов перед отправкой в git.
 
 #### Вариант 1: Local CI Script (Windows - PowerShell)
 
