@@ -25,69 +25,69 @@ https://github.com/antonzyryanov/Barcode-Scanner-Backend.git
 ## Скриншоты приложения
 
 ### App Screenshot 1
-![App Screenshot 1](app%20screenshots/screen_1.jpg)
+![App Screenshot 1](app_screenshots/screen_1.jpg)
 
 ### App Screenshot 2
-![App Screenshot 2](app%20screenshots/screen_2.jpg)
+![App Screenshot 2](app_screenshots/screen_2.jpg)
 
 ### App Screenshot 3
-![App Screenshot 3](app%20screenshots/screen_3.jpg)
+![App Screenshot 3](app_screenshots/screen_3.jpg)
 
 ### App Screenshot 4
-![App Screenshot 4](app%20screenshots/screen_4.jpg)
+![App Screenshot 4](app_screenshots/screen_4.jpg)
 
 ### App Screenshot 5
-![App Screenshot 5](app%20screenshots/screen_5.jpg)
+![App Screenshot 5](app_screenshots/screen_5.jpg)
 
 ### App Screenshot 6
-![App Screenshot 6](app%20screenshots/screen_6.jpg)
+![App Screenshot 6](app_screenshots/screen_6.jpg)
 
 ### App Screenshot 7
-![App Screenshot 7](app%20screenshots/screen_7.jpg)
+![App Screenshot 7](app_screenshots/screen_7.jpg)
 
 ### App Screenshot 8
-![App Screenshot 8](app%20screenshots/screen_8.jpg)
+![App Screenshot 8](app_screenshots/screen_8.jpg)
 
 ### App Screenshot 9
-![App Screenshot 9](app%20screenshots/screen_9.jpg)
+![App Screenshot 9](app_screenshots/screen_9.jpg)
 
 ### App Screenshot 10
-![App Screenshot 10](app%20screenshots/screen_10.jpg)
+![App Screenshot 10](app_screenshots/screen_10.jpg)
 
 ## Штрихкоды для Manual тестов
 
 ### Barcode 1
-![Barcode 1](manual%20tests/barcodes/barcode_1.jpg)
+![Barcode 1](manual_tests/barcodes/barcode_1.jpg)
 
 ### Barcode 2
-![Barcode 2](manual%20tests/barcodes/barcode_2.jpg)
+![Barcode 2](manual_tests/barcodes/barcode_2.jpg)
 
 ### Barcode 3
-![Barcode 3](manual%20tests/barcodes/barcode_3.jpg)
+![Barcode 3](manual_tests/barcodes/barcode_3.jpg)
 
 ### Barcode 4
-![Barcode 4](manual%20tests/barcodes/barcode_4.jpg)
+![Barcode 4](manual_tests/barcodes/barcode_4.jpg)
 
 ### Barcode 5
-![Barcode 5](manual%20tests/barcodes/barcode_5.jpg)
+![Barcode 5](manual_tests/barcodes/barcode_5.jpg)
 
 ### Barcode 6
-![Barcode 6](manual%20tests/barcodes/barcode_6.jpg)
+![Barcode 6](manual_tests/barcodes/barcode_6.jpg)
 
 ### Barcode 7
-![Barcode 7](manual%20tests/barcodes/barcode_7.jpg)
+![Barcode 7](manual_tests/barcodes/barcode_7.jpg)
 
 ### Barcode 8
-![Barcode 8](manual%20tests/barcodes/barcode_8.jpg)
+![Barcode 8](manual_tests/barcodes/barcode_8.jpg)
 
 ### Barcode 9
-![Barcode 9](manual%20tests/barcodes/barcode_9.jpg)
+![Barcode 9](manual_tests/barcodes/barcode_9.jpg)
 
 ### Barcode 10
-![Barcode 10](manual%20tests/barcodes/barcode_10.jpg)
+![Barcode 10](manual_tests/barcodes/barcode_10.jpg)
 
 ### Unknown Barcode
-![Unknown Barcode](manual%20tests/barcodes/barcode_unknown.jpg)
+![Unknown Barcode](manual_tests/barcodes/barcode_unknown.jpg)
 
 ## Видео выполненных мануальных тестов на обеих платформах:
 
@@ -143,28 +143,28 @@ https://drive.google.com/drive/folders/1pdoobQEN1ZoZ0jdwCH0acMS6egbV-kFs?usp=sha
 ## Скриншоты проверки адекватности unit тестов
 
 ### Manual Test Screen 1
-![Manual Test 1](manual%20tests/unit%20tests/manual_test_1.jpg)
+![Manual Test 1](manual_tests/unit_tests/manual_test_1.jpg)
 
 ### Manual Test Screen 2
-![Manual Test 2](manual%20tests/unit%20tests/manual_test_2.jpg)
+![Manual Test 2](manual_tests/unit_tests/manual_test_2.jpg)
 
 ### Manual Test Screen 3
-![Manual Test 3](manual%20tests/unit%20tests/manual_test_3.jpg)
+![Manual Test 3](manual_tests/unit_tests/manual_test_3.jpg)
 
 ### Manual Test Screen 4
-![Manual Test 4](manual%20tests/unit%20tests/manual_test_4.jpg)
+![Manual Test 4](manual_tests/unit_tests/manual_test_4.jpg)
 
 ### Manual Test Screen 5
-![Manual Test 5](manual%20tests/unit%20tests/manual_test_5.jpg)
+![Manual Test 5](manual_tests/unit_tests/manual_test_5.jpg)
 
 ### Manual Test Screen 6
-![Manual Test 6](manual%20tests/unit%20tests/manual_test_6.jpg)
+![Manual Test 6](manual_tests/unit_tests/manual_test_6.jpg)
 
 ### Manual Test Screen 7
-![Manual Test 7](manual%20tests/unit%20tests/manual_test_7.jpg)
+![Manual Test 7](manual_tests/unit_tests/manual_test_7.jpg)
 
 ### Manual Test Screen 8
-![Manual Test 8](manual%20tests/unit%20tests/manual_test_8.jpg)
+![Manual Test 8](manual_tests/unit_tests/manual_test_8.jpg)
 
 
 14. UI/UX принципы 
@@ -281,13 +281,13 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Отступы, шрифты и размеры иконок стандартизированы. Их значения вынесены в отдельные файлы: spacing_config.dart, typography_config.dart, icon_sizing_config.dart
 
 ## Скриншоты мануальных тестов CI
-![CI Manual Test 1](manual%20tests/ci/ci_test_1.jpg)
-![CI Manual Test 2](manual%20tests/ci/ci_test_2.jpg)
-![CI Manual Test 3](manual%20tests/ci/ci_test_3.jpg)
+![CI Manual Test 1](manual_tests/ci/ci_test_1.jpg)
+![CI Manual Test 2](manual_tests/ci/ci_test_2.jpg)
+![CI Manual Test 3](manual_tests/ci/ci_test_3.jpg)
 
 ## Скриншоты мануального теста кейса ввода заказчиком длинных полей на сервере
-![Long Input Test 1](manual%20tests/long%20input/long_input_test1.jpg)
-![Long Input Test 2](manual%20tests/long%20input/long_input_test2.jpg)
+![Long Input Test 1](manual_tests/long_input/long_input_test1.jpg)
+![Long Input Test 2](manual_tests/long_input/long_input_test2.jpg)
 
 ## Документация к анимациям проекта:
 
