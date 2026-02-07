@@ -33,7 +33,7 @@ class ErrorAlertWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedFadeSlideWidget(
-            child: Container(
+            child: SizedBox(
               width: 64,
               height: 64,
               child: Image.asset(
