@@ -272,6 +272,11 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 Добавлен кастомный виджет алерта ошибки вместо дефолтного
 
+## Скриншоты мануальных тестов CI
+![CI Manual Test 1](manual%20tests/ci%20manual%20tests/ci_test_1.jpg)
+![CI Manual Test 2](manual%20tests/ci%20manual%20tests/ci_test_2.jpg)
+![CI Manual Test 3](manual%20tests/ci%20manual%20tests/ci_test_3.jpg)
+
 ## Документация к анимациям проекта:
 
 1. Файл конфигурации анимаций - animation_config.dart
