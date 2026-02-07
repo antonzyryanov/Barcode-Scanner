@@ -1,4 +1,4 @@
-import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_button_widget.dart';
+import 'package:anton_zyryanov_barcode_scanner/widgets/components/error_alert_widget.dart';
 import 'package:flutter/material.dart';
 
 class ErrorPresenter {
@@ -8,15 +8,15 @@ class ErrorPresenter {
   }) {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Error'),
-        content: Text(error),
-        actions: [
-          AnimatedButtonWidget(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('OK'),
-          ),
-        ],
+      barrierColor: Colors.black54,
+      builder: (context) => Dialog(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        insetPadding: const EdgeInsets.symmetric(horizontal: 24),
+        child: ErrorAlertWidget(
+          error: error,
+          onClose: () => Navigator.of(context).pop(),
+        ),
       ),
     );
   }

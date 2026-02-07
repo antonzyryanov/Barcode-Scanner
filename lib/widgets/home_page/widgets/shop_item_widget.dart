@@ -94,7 +94,6 @@ class ShopItemWidget extends StatelessWidget {
                 state.shopItem?.sizesInStock.keys.elementAt(index) ?? '';
             int stock = state.shopItem?.sizesInStock[size] ?? 0;
 
-            // Каждый элемент списка появляется с небольшой задержкой
             return AnimatedFadeSlideWidget(
               delay: Duration(milliseconds: 400 + (index * 80)),
               child: ListTile(
