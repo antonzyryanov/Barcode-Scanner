@@ -2,6 +2,7 @@ import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
 import 'package:anton_zyryanov_barcode_scanner/theme/animation_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/theme/responsive_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/theme/spacing_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/theme/typography_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/widgets/model_finder_widget.dart';
@@ -20,6 +21,7 @@ class ShopItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sizesCount = state.shopItem?.sizesInStock.length ?? 0;
+    final imageHeight = ResponsiveConfig.getImageHeight(context);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -33,14 +35,14 @@ class ShopItemWidget extends StatelessWidget {
               state.shopItem?.imageUrl ?? '',
               width: double.infinity,
               fit: BoxFit.cover,
-              height: 200,
+              height: imageHeight,
               alignment: Alignment.center,
               loadingBuilder: (context, child, loadingProgress) {
                 if (loadingProgress == null) {
                   return child;
                 }
                 return Container(
-                  height: 200,
+                  height: imageHeight,
                   color: AppTheme.transparent,
                   child: const Center(
                     child: SizedBox(
@@ -56,7 +58,7 @@ class ShopItemWidget extends StatelessWidget {
                 );
               },
               errorBuilder: (context, error, stackTrace) => Container(
-                height: 200,
+                height: imageHeight,
                 color: AppTheme.errorPlaceholder,
                 child: const Icon(Icons.broken_image, size: 50),
               ),
@@ -78,9 +80,7 @@ class ShopItemWidget extends StatelessWidget {
           delay: const Duration(milliseconds: 300),
           child: const Text(
             'Sizes in stock:',
-            style: TextStyle(
-              color: AppTheme.textPrimary,
-            ),
+            style: TextStyle(color: AppTheme.textPrimary),
           ),
         ),
         SizedBox(height: SpacingConfig.spacing8),

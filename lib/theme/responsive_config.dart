@@ -48,4 +48,14 @@ class ResponsiveConfig {
     }
     return IconSizingConfig.iconXXLarge;
   }
+
+  static double getImageHeight(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    if (width < mobileMaxWidth) {
+      return 200.0; // Mobile
+    } else if (width < desktopMinWidth) {
+      return 300.0; // Tablet
+    }
+    return 400.0; // Desktop
+  }
 }
