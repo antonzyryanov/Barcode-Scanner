@@ -7,7 +7,7 @@ class AnimationConfig {
   static const Duration buttonPressDuration = Duration(milliseconds: 150);
   static const Duration buttonReleaseDuration = Duration(milliseconds: 200);
 
-  // Curves - нелинейные кривые для реалистичности
+  // нелинейные кривые для реалистичности
   static const Curve pageTransitionCurve = Curves.easeInOutCubic;
   static const Curve fadeInCurve = Curves.easeIn;
   static const Curve fadeOutCurve = Curves.easeOut;

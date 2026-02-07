@@ -1,10 +1,14 @@
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/events/main_events.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/theme/responsive_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/theme/spacing_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/theme/typography_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_button_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/error_presenter.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/scanner/barcode_scanner_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class ModelFinderWidget extends StatelessWidget {
@@ -18,12 +22,24 @@ class ModelFinderWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
+        SvgPicture.asset(
+          'assets/central_logo.svg',
+          width: ResponsiveConfig.getLogoSize(context),
+          height: ResponsiveConfig.getLogoSize(context),
+          colorFilter: const ColorFilter.mode(
+            AppTheme.textPrimary,
+            BlendMode.srcIn,
+          ),
+        ),
+        SizedBox(height: SpacingConfig.spacing12),
+        Text(
           'Tap to find model',
-          style: TextStyle(fontSize: 20, color: AppTheme.textPrimary),
+          style: TypographyConfig.headingSmall.copyWith(
+            color: AppTheme.textPrimary,
+          ),
         ),
         Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(SpacingConfig.spacing16),
           child: SizedBox(
             width: .infinity,
             child: AnimatedButtonWidget(
@@ -45,7 +61,7 @@ class ModelFinderWidget extends StatelessWidget {
               },
               child: const Text(
                 'Scan',
-                style: TextStyle(fontSize: 20, color: AppTheme.textOnButton),
+                style: TextStyle(color: AppTheme.textOnButton),
               ),
             ),
           ),

@@ -22,54 +22,7 @@ class HomePageUiBuilder {
         child: ScanResultWidget(result: state.result),
       );
     } else if (state is MainDataLoaded) {
-      if (state.error != null) {
-        return AnimatedFadeSlideWidget(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                AnimatedFadeSlideWidget(
-                  delay: const Duration(milliseconds: 100),
-                  child: const Icon(
-                    Icons.error_outline,
-                    size: 64,
-                    color: AppTheme.iconPrimary,
-                  ),
-                ),
-                const SizedBox(height: 16),
-                AnimatedFadeSlideWidget(
-                  delay: const Duration(milliseconds: 200),
-                  child: const Text(
-                    'Error loading item',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: AppTheme.textPrimary,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 8),
-                AnimatedFadeSlideWidget(
-                  delay: const Duration(milliseconds: 300),
-                  child: Text(
-                    state.error ?? 'Unknown error',
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: AppTheme.textSecondary,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                const SizedBox(height: 24),
-                AnimatedFadeSlideWidget(
-                  delay: const Duration(milliseconds: 400),
-                  child: Center(child: ModelFinderWidget(mainBloc: mainBloc)),
-                ),
-              ],
-            ),
-          ),
-        );
-      } else if (state.shopItem != null) {
+      if (state.shopItem != null) {
         return AnimatedFadeSlideWidget(
           child: ShopItemWidget(mainBloc: mainBloc, state: state),
         );
@@ -82,7 +35,7 @@ class HomePageUiBuilder {
         child: const Center(
           child: Text(
             'Tap to find model',
-            style: TextStyle(fontSize: 20, color: AppTheme.textPrimary),
+            style: TextStyle(color: AppTheme.textPrimary),
           ),
         ),
       );

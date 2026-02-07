@@ -17,7 +17,19 @@ class HomePageWidget extends StatelessWidget {
     final mainBloc = context.read<MainBloc>();
     return Scaffold(
       backgroundColor: AppTheme.primary,
-      appBar: AppBar(title: const Text('Sneakers Store')),
+      appBar: AppBar(
+        title: const Text('Sneakers Store'),
+        backgroundColor: AppTheme.background,
+        elevation: 4,
+        centerTitle: false,
+        iconTheme: const IconThemeData(color: AppTheme.textPrimary),
+        toolbarHeight: 70,
+        titleTextStyle: const TextStyle(
+          color: AppTheme.textPrimary,
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       body: BlocListener<MainBloc, MainState>(
         listener: (context, state) {
           if (state is MainDataLoaded && state.error != null) {
@@ -73,7 +85,6 @@ class HomePageWidget extends StatelessWidget {
     MainState state,
     MainBloc mainBloc,
   ) {
-    // Ключи для AnimatedSwitcher чтобы различать состояния
     if (state is MainLoaderShown) {
       return const SneakerLoaderWidget(key: ValueKey('loader'));
     }

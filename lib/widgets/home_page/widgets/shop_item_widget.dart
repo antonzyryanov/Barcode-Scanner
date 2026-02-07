@@ -2,6 +2,8 @@ import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
 import 'package:anton_zyryanov_barcode_scanner/theme/animation_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/theme/spacing_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/theme/typography_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/widgets/model_finder_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +31,9 @@ class ShopItemWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             child: Image.network(
               state.shopItem?.imageUrl ?? '',
+              width: double.infinity,
               fit: BoxFit.cover,
+              height: 200,
               alignment: Alignment.center,
               loadingBuilder: (context, child, loadingProgress) {
                 if (loadingProgress == null) {
@@ -44,7 +48,7 @@ class ShopItemWidget extends StatelessWidget {
                       height: 150,
                       child: CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(
-                          AppTheme.progressIndicator,
+                          AppTheme.textPrimary,
                         ),
                       ),
                     ),
@@ -59,31 +63,27 @@ class ShopItemWidget extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: SpacingConfig.spacing16),
         AnimatedFadeSlideWidget(
           delay: const Duration(milliseconds: 200),
           child: Text(
             state.shopItem?.name ?? '',
-            style: const TextStyle(
+            style: TypographyConfig.headingLarge.copyWith(
               color: AppTheme.textPrimary,
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
             ),
           ),
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: SpacingConfig.spacing16),
         AnimatedFadeSlideWidget(
           delay: const Duration(milliseconds: 300),
           child: const Text(
             'Sizes in stock:',
             style: TextStyle(
               color: AppTheme.textPrimary,
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
             ),
           ),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: SpacingConfig.spacing8),
         ListView.builder(
           shrinkWrap: true,
           padding: EdgeInsets.zero,
@@ -102,7 +102,6 @@ class ShopItemWidget extends StatelessWidget {
                   'Size $size',
                   style: const TextStyle(
                     color: AppTheme.textPrimary,
-                    fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -110,7 +109,6 @@ class ShopItemWidget extends StatelessWidget {
                   'In stock: $stock',
                   style: const TextStyle(
                     color: AppTheme.textPrimary,
-                    fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -118,12 +116,12 @@ class ShopItemWidget extends StatelessWidget {
             );
           },
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: SpacingConfig.spacing20),
         AnimatedFadeSlideWidget(
           delay: Duration(milliseconds: 400 + (sizesCount * 80) + 100),
           child: Center(child: ModelFinderWidget(mainBloc: mainBloc)),
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: SpacingConfig.spacing20),
       ],
     );
   }

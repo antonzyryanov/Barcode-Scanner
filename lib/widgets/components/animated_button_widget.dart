@@ -1,5 +1,6 @@
 import 'package:anton_zyryanov_barcode_scanner/theme/animation_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/theme/spacing_config.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedButtonWidget extends StatefulWidget {
@@ -86,10 +87,15 @@ class _AnimatedButtonWidgetState extends State<AnimatedButtonWidget>
       child: ScaleTransition(
         scale: _scaleAnimation,
         child: ElevatedButton(
-          onPressed: null, // GestureDetector handles tap
+          onPressed: null,
           style: ElevatedButton.styleFrom(
+            minimumSize: const Size(48, 48),
             disabledBackgroundColor: AppTheme.buttonBackground,
             disabledForegroundColor: AppTheme.buttonBackground,
+            padding: const EdgeInsets.symmetric(
+              horizontal: SpacingConfig.spacing16,
+              vertical: SpacingConfig.spacing12,
+            ),
           ),
           child: widget.child,
         ),
