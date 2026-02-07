@@ -203,8 +203,57 @@ https://drive.google.com/drive/folders/1pdoobQEN1ZoZ0jdwCH0acMS6egbV-kFs?usp=sha
 
 Кодогонерация тестовых сущностей с помощью Mockery
 
+## Continuous Integration (CI)
 
+### Automated Testing and Git Push
 
+This project includes CI automation to ensure code quality by running tests before pushing to git.
+
+#### Option 1: Local CI Script (Windows - PowerShell)
+
+Run the CI pipeline locally using the provided PowerShell script:
+
+```powershell
+.\ci.ps1
+```
+
+Or with a custom commit message:
+
+```powershell
+.\ci.ps1 -CommitMessage "Your custom message"
+```
+
+The script will:
+1. Run all unit and widget tests with `flutter test`
+2. Abort if any tests fail with an error message
+3. Check for uncommitted changes
+4. Commit all changes with a message
+5. Push to the remote git repository
+
+#### Option 2: GitHub Actions (Automated CI/CD)
+
+GitHub Actions automatically runs tests on every push to `main` or `develop` branches and on pull requests.
+
+The workflow file (`.github/workflows/ci.yml`) performs:
+- Checkout code
+- Setup Flutter environment
+- Install dependencies with `flutter pub get`
+- Run tests with `flutter test`
+- Run code analysis with `flutter analyze`
+
+If any step fails, the push/PR will be marked as failed and you'll receive a notification.
+
+#### Requirements
+
+- Flutter and Dart installed locally (for Option 1)
+- Git configured with remote repository (for Option 1)
+- GitHub account with repository access (for Option 2)
+
+#### Example Usage
+
+```bash
+
+.\ci.ps1
 
 
 
