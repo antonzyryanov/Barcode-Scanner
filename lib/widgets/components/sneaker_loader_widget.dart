@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SneakerLoaderWidget extends StatelessWidget {
-  const SneakerLoaderWidget({Key? key}) : super(key: key);
+  const SneakerLoaderWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

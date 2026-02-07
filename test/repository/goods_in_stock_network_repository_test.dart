@@ -212,10 +212,10 @@ class TestableGoodsInStockNetworkRepository
   final http.Client client;
 
   TestableGoodsInStockNetworkRepository({
-    required String serverIP,
-    required String serverPort,
+    required super.serverIP,
+    required super.serverPort,
     required this.client,
-  }) : super(serverIP: serverIP, serverPort: serverPort);
+  });
 
   @override
   Future<ShopItem> retrieveGoodsInStock(String scannedString) async {
@@ -227,7 +227,7 @@ class TestableGoodsInStockNetworkRepository
     }
 
     final int id = int.parse(match.group(1)!);
-    final url = Uri.parse('http://${serverIP}:$serverPort/item?id=$id');
+    final url = Uri.parse('http://$serverIP:$serverPort/item?id=$id');
 
     try {
       final response = await client.get(url);

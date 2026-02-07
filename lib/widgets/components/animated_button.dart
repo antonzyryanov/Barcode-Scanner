@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AnimatedButton extends StatefulWidget {
+  const AnimatedButton({
+    super.key,
+    required this.child,
+    required this.onPressed,
+  });
+
   final Widget child;
   final VoidCallback onPressed;
-
-  const AnimatedButton({Key? key, required this.child, required this.onPressed})
-    : super(key: key);
 
   @override
   State<AnimatedButton> createState() => _AnimatedButtonState();

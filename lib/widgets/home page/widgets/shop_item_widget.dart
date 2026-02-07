@@ -4,7 +4,11 @@ import 'package:anton_zyryanov_barcode_scanner/widgets/home%20page/widgets/model
 import 'package:flutter/material.dart';
 
 class ShopItemWidget extends StatelessWidget {
-  ShopItemWidget({super.key, required this.mainBloc, required this.state});
+  const ShopItemWidget({
+    super.key,
+    required this.mainBloc,
+    required this.state,
+  });
 
   final MainBloc mainBloc;
   final MainDataLoaded state;

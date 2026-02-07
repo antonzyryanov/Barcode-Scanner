@@ -12,13 +12,11 @@ class DIContainer {
 
   GoodsInStockRepositoryProtocol createDataLayerWorker() {
     if (appSettings.isMockOn) {
-      print("[DIContainer] Using Mock Repository");
       return GoodsInStockMockRepository();
     } else {
-      print("[DIContainer] Using Network Repository");
       return GoodsInStockNetworkRepository(
-        serverIP: appSettings.SERVER_IP,
-        serverPort: appSettings.SERVER_PORT,
+        serverIP: appSettings.serverIP,
+        serverPort: appSettings.serverPort,
       );
     }
   }

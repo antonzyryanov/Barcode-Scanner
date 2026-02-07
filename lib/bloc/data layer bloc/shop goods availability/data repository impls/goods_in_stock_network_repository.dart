@@ -22,33 +22,21 @@ class GoodsInStockNetworkRepository implements GoodsInStockRepositoryProtocol {
 
     final int id = int.parse(match.group(1)!);
 
-    final url = Uri.parse('http://${serverIP}:$serverPort/item?id=$id');
-
-    print("GoodsInStockNetworkRepository: Fetching data for id=$id from $url");
+    final url = Uri.parse('http://$serverIP:$serverPort/item?id=$id');
 
     try {
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
-        print(
-          "GoodsInStockNetworkRepository: Received response: ${response.body}",
-        );
         final data = json.decode(response.body);
         final shopItem = ShopItem.fromJson(data);
         return shopItem;
       } else if (response.statusCode == 404) {
-        print("GoodsInStockNetworkRepository: Item not found for id=$id");
         throw Exception('Item not found');
       } else {
-        print(
-          "GoodsInStockNetworkRepository: Server error with status code ${response.statusCode}",
-        );
         throw Exception('Server error: ${response.statusCode}');
       }
     } catch (e) {
-      print(
-        "GoodsInStockNetworkRepository: Error fetching data for id=$id - $e",
-      );
       throw Exception('Failed to retrieve goods: $e');
     }
   }

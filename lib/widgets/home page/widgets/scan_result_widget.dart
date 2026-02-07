@@ -13,7 +13,7 @@ class ScanResultWidget extends StatelessWidget {
         children: [
           Text(
             textAlign: TextAlign.center,
-            'Result: ${result}',
+            'Result: $result',
             style: const TextStyle(
               fontSize: 24,
               color: Colors.white,

@@ -30,15 +30,19 @@ class ModelFinderWidget extends StatelessWidget {
               onPressed: () async {
                 final status = await Permission.camera.request();
                 if (status.isGranted) {
-                  await openBarcodeScanner(context);
+                  if (context.mounted) {
+                    await openBarcodeScanner(context);
+                  }
                 } else {
-                  ErrorPresenter.showError(
-                    context: context,
-                    state: MainDataLoaded(
-                      error:
-                          'Camera permission denied. Please grant permission in phone settings.',
-                    ),
-                  );
+                  if (context.mounted) {
+                    ErrorPresenter.showError(
+                      context: context,
+                      state: MainDataLoaded(
+                        error:
+                            'Camera permission denied. Please grant permission in phone settings.',
+                      ),
+                    );
+                  }
                 }
               },
               child: const Text(

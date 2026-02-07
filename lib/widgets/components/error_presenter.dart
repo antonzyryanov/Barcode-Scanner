@@ -3,7 +3,7 @@ import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_butto
 import 'package:flutter/material.dart';
 
 class ErrorPresenter {
-  static showError({
+  static void showError({
     required BuildContext context,
     required MainDataLoaded state,
   }) {
