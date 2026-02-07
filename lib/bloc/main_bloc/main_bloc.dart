@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:anton_zyryanov_barcode_scanner/bloc/data%20layer%20bloc/data_layer_bloc.dart';
-import 'package:anton_zyryanov_barcode_scanner/bloc/data%20layer%20bloc/shop%20goods%20availability/protocols/goods_in_stock_repository_protocol.dart';
-import 'package:anton_zyryanov_barcode_scanner/bloc/data%20layer%20bloc/state/data_layer_state.dart';
-import 'package:anton_zyryanov_barcode_scanner/bloc/main%20bloc/events/main_events.dart';
-import 'package:anton_zyryanov_barcode_scanner/bloc/main%20bloc/state/main_state.dart';
+import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/data_layer_bloc.dart';
+import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/shop_goods_availability/protocols/goods_in_stock_repository_protocol.dart';
+import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/state/data_layer_state.dart';
+import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/events/main_events.dart';
+import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {

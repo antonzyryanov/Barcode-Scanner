@@ -1,3 +1,4 @@
+import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class SneakerLoaderWidget extends StatelessWidget {
@@ -6,7 +7,7 @@ class SneakerLoaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black,
+      color: AppTheme.loaderBackground,
       child: Center(
         child: Image.asset(
           'assets/sneaker_loader.gif',

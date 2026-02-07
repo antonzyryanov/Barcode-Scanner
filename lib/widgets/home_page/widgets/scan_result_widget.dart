@@ -1,3 +1,4 @@
+import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class ScanResultWidget extends StatelessWidget {
@@ -16,7 +17,7 @@ class ScanResultWidget extends StatelessWidget {
             'Result: $result',
             style: const TextStyle(
               fontSize: 24,
-              color: Colors.white,
+              color: AppTheme.textPrimary,
               fontWeight: FontWeight.bold,
             ),
           ),

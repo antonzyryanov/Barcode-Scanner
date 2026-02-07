@@ -1,6 +1,7 @@
-import 'package:anton_zyryanov_barcode_scanner/bloc/main%20bloc/main_bloc.dart';
-import 'package:anton_zyryanov_barcode_scanner/bloc/main%20bloc/state/main_state.dart';
-import 'package:anton_zyryanov_barcode_scanner/widgets/home%20page/widgets/model_finder_widget.dart';
+import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
+import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
+import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/widgets/model_finder_widget.dart';
 import 'package:flutter/material.dart';
 
 class ShopItemWidget extends StatelessWidget {
@@ -22,7 +23,7 @@ class ShopItemWidget extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
-            state.shopItem!.imageUrl,
+            state.shopItem?.imageUrl ?? '',
             fit: BoxFit.cover,
             alignment: Alignment.center,
             loadingBuilder: (context, child, loadingProgress) {
@@ -31,13 +32,15 @@ class ShopItemWidget extends StatelessWidget {
               }
               return Container(
                 height: 200,
-                color: Colors.transparent,
+                color: AppTheme.transparent,
                 child: const Center(
                   child: SizedBox(
                     width: 150,
                     height: 150,
                     child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        AppTheme.progressIndicator,
+                      ),
                     ),
                   ),
                 ),
@@ -45,16 +48,16 @@ class ShopItemWidget extends StatelessWidget {
             },
             errorBuilder: (context, error, stackTrace) => Container(
               height: 200,
-              color: Colors.grey[300],
+              color: AppTheme.errorPlaceholder,
               child: const Icon(Icons.broken_image, size: 50),
             ),
           ),
         ),
         const SizedBox(height: 16),
         Text(
-          state.shopItem!.name,
+          state.shopItem?.name ?? '',
           style: const TextStyle(
-            color: Colors.white,
+            color: AppTheme.textPrimary,
             fontSize: 32,
             fontWeight: FontWeight.bold,
           ),
@@ -63,7 +66,7 @@ class ShopItemWidget extends StatelessWidget {
         const Text(
           'Sizes in stock:',
           style: TextStyle(
-            color: Colors.white,
+            color: AppTheme.textPrimary,
             fontSize: 18,
             fontWeight: FontWeight.w600,
           ),
@@ -73,16 +76,17 @@ class ShopItemWidget extends StatelessWidget {
           shrinkWrap: true,
           padding: EdgeInsets.zero,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: state.shopItem!.sizesInStock.length,
+          itemCount: state.shopItem?.sizesInStock.length ?? 0,
           itemBuilder: (context, index) {
-            String size = state.shopItem!.sizesInStock.keys.elementAt(index);
-            int stock = state.shopItem!.sizesInStock[size]!;
+            String size =
+                state.shopItem?.sizesInStock.keys.elementAt(index) ?? '';
+            int stock = state.shopItem?.sizesInStock[size] ?? 0;
             return ListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(
                 'Size $size',
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: AppTheme.textPrimary,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
@@ -90,7 +94,7 @@ class ShopItemWidget extends StatelessWidget {
               trailing: Text(
                 'In stock: $stock',
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: AppTheme.textPrimary,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),

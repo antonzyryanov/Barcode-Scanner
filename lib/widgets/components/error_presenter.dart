@@ -1,19 +1,18 @@
-import 'package:anton_zyryanov_barcode_scanner/bloc/main%20bloc/state/main_state.dart';
-import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_button.dart';
+import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class ErrorPresenter {
   static void showError({
     required BuildContext context,
-    required MainDataLoaded state,
+    required String error,
   }) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Error'),
-        content: Text(state.error ?? 'Unknown error occurred'),
+        content: Text(error),
         actions: [
-          AnimatedButton(
+          AnimatedButtonWidget(
             onPressed: () => Navigator.of(context).pop(),
             child: const Text('OK'),
           ),

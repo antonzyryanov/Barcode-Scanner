@@ -1,4 +1,4 @@
-import 'package:anton_zyryanov_barcode_scanner/bloc/main%20bloc/state/main_state.dart';
+import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
 import 'package:anton_zyryanov_barcode_scanner/models/shop/shop_item.dart';
 import 'package:flutter_test/flutter_test.dart';
 

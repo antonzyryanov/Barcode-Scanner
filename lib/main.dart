@@ -6,13 +6,12 @@ void main() async {
   runApp(const MyApp());
 }
 
-final DIContainer diContainer = DIContainer();
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final DIContainer diContainer = DIContainer();
     return diContainer.buildApp(context);
   }
 }
