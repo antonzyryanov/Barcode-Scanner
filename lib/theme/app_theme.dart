@@ -8,6 +8,8 @@ class AppTheme {
   static const Color textSecondary = Colors.white70;
   static const Color textOnButton = Colors.black;
 
+  static const Color buttonBackground = Colors.white;
+
   static const Color loaderBackground = Colors.black;
   static const Color progressIndicator = Colors.white;
   static const Color transparent = Colors.transparent;

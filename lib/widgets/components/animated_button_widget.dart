@@ -1,3 +1,5 @@
+import 'package:anton_zyryanov_barcode_scanner/theme/animation_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedButtonWidget extends StatefulWidget {
@@ -16,24 +18,30 @@ class AnimatedButtonWidget extends StatefulWidget {
 
 class _AnimatedButtonWidgetState extends State<AnimatedButtonWidget>
     with SingleTickerProviderStateMixin {
-  static const int animationTimeMS = 100;
-  static const double tappedButtonScaleFactor = 1.10;
-  static const int onTapDelayToShowAnimationMS = 250;
-
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
+  bool _isPressed = false;
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: animationTimeMS),
+      duration: AnimationConfig.buttonPressDuration,
+      reverseDuration: AnimationConfig.buttonReleaseDuration,
       vsync: this,
     );
-    _scaleAnimation = Tween<double>(
-      begin: 1.0,
-      end: tappedButtonScaleFactor,
-    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+
+    _scaleAnimation =
+        Tween<double>(
+          begin: AnimationConfig.buttonScaleReleased,
+          end: AnimationConfig.buttonScalePressed,
+        ).animate(
+          CurvedAnimation(
+            parent: _controller,
+            curve: AnimationConfig.buttonPressCurve,
+            reverseCurve: AnimationConfig.buttonReleaseCurve,
+          ),
+        );
   }
 
   @override
@@ -42,23 +50,50 @@ class _AnimatedButtonWidgetState extends State<AnimatedButtonWidget>
     super.dispose();
   }
 
-  void _handleTap() {
-    _controller.forward().then((_) {
+  void _handleTapDown(TapDownDetails details) {
+    if (!_isPressed) {
+      setState(() => _isPressed = true);
+      _controller.forward();
+    }
+  }
+
+  void _handleTapUp(TapUpDetails details) {
+    _handleRelease();
+  }
+
+  void _handleTapCancel() {
+    _handleRelease();
+  }
+
+  void _handleRelease() {
+    if (_isPressed) {
+      setState(() => _isPressed = false);
       _controller.reverse();
-    });
-    Future.delayed(
-      const Duration(milliseconds: onTapDelayToShowAnimationMS),
-      () {
-        widget.onPressed();
-      },
-    );
+    }
+  }
+
+  void _handleTap() {
+    widget.onPressed();
   }
 
   @override
   Widget build(BuildContext context) {
-    return ScaleTransition(
-      scale: _scaleAnimation,
-      child: ElevatedButton(onPressed: _handleTap, child: widget.child),
+    return GestureDetector(
+      onTapDown: _handleTapDown,
+      onTapUp: _handleTapUp,
+      onTapCancel: _handleTapCancel,
+      onTap: _handleTap,
+      child: ScaleTransition(
+        scale: _scaleAnimation,
+        child: ElevatedButton(
+          onPressed: null, // GestureDetector handles tap
+          style: ElevatedButton.styleFrom(
+            disabledBackgroundColor: AppTheme.buttonBackground,
+            disabledForegroundColor: AppTheme.buttonBackground,
+          ),
+          child: widget.child,
+        ),
+      ),
     );
   }
 }
