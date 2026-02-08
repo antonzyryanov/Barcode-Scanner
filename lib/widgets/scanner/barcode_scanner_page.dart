@@ -24,7 +24,9 @@ class BarcodeScannerPage extends StatelessWidget {
           isScanned = true;
           final List<Barcode> barcodes = capture.barcodes;
           if (barcodes.isNotEmpty) {
-            final String code = barcodes.first.rawValue ?? '-1';
+            final String code =
+                barcodes.first.rawValue ??
+                AppLocalizations.of(context).barcodeListEmpty;
             Navigator.pop(context, code);
           }
         },

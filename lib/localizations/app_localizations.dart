@@ -41,6 +41,7 @@ class AppLocalizations {
       'serverError': 'Server error: {statusCode}',
       'failedRetrieveGoods': 'Failed to retrieve goods: {error}',
       'itemNotFoundInShop': 'Item not found in shop',
+      'barcodeListEmpty': 'Barcode list is empty',
     },
     'ru': {
       'appName': 'Магазин кроссовок',
@@ -62,6 +63,7 @@ class AppLocalizations {
       'serverError': 'Ошибка сервера: {statusCode}',
       'failedRetrieveGoods': 'Не удалось получить данные: {error}',
       'itemNotFoundInShop': 'Товар не найден в магазине',
+      'barcodeListEmpty': 'Список штрих-кодов пуст',
     },
   };
 
@@ -90,6 +92,7 @@ class AppLocalizations {
   String get invalidScannedFormat => _value('invalidScannedFormat');
   String get itemNotFound => _value('itemNotFound');
   String get itemNotFoundInShop => _value('itemNotFoundInShop');
+  String get barcodeListEmpty => _value('barcodeListEmpty');
 
   String sizeLabel(String size) => _format('sizeLabel', {'size': size});
 
