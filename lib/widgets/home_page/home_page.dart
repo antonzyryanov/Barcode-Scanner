@@ -2,7 +2,9 @@ import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/events/main_events
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/animation_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/app_bar_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/timing_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/error_presenter.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/sneaker_loader_widget.dart';
@@ -21,13 +23,13 @@ class HomePageWidget extends StatelessWidget {
       appBar: AppBar(
         title: Text(AppLocalizations.of(context).appName),
         backgroundColor: AppTheme.background,
-        elevation: 4,
+        elevation: AppBarConfig.appBarElevation,
         centerTitle: false,
         iconTheme: const IconThemeData(color: AppTheme.textPrimary),
-        toolbarHeight: 70,
+        toolbarHeight: AppBarConfig.toolbarHeight,
         titleTextStyle: const TextStyle(
           color: AppTheme.textPrimary,
-          fontSize: 24,
+          fontSize: AppBarConfig.appNameFontSize,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -111,8 +113,7 @@ class HomePageWidget extends StatelessWidget {
   }
 
   void closeShownError(BuildContext context, MainBloc mainBloc) {
-    const errorShowingTimeSeconds = 3;
-    Future.delayed(const Duration(seconds: errorShowingTimeSeconds), () {
+    Future.delayed(TimingConfig.errorDisplayDuration, () {
       if (!context.mounted) {
         return;
       }

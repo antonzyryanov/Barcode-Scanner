@@ -5,6 +5,7 @@ import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/shop_goods_a
 import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/state/data_layer_state.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/events/main_events.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/timing_config.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {
@@ -28,7 +29,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
     on<SetScanResultEvent>((event, emit) async {
       emit(MainScanResult(event.result));
-      Future.delayed(const Duration(seconds: 3), () async {
+      Future.delayed(TimingConfig.scanResultDelay, () async {
         await _dataLayerBloc.retrieveData(event.result);
       });
     });
@@ -45,7 +46,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       emit(MainInitial());
     });
 
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(TimingConfig.autoResetDelay, () {
       if (!isClosed) {
         add(ResetMainStateEvent());
       }
