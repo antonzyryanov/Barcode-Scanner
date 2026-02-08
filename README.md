@@ -296,6 +296,8 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ![CI Manual Test 1](manual_tests/ci/ci_test_1.jpg)
 ![CI Manual Test 2](manual_tests/ci/ci_test_2.jpg)
 ![CI Manual Test 3](manual_tests/ci/ci_test_3.jpg)
+![CI Manual Test 2](manual_tests/ci/ci_test_4.jpg)
+![CI Manual Test 3](manual_tests/ci/ci_test_5.jpg)
 
 ## Скриншоты мануального теста кейса ввода заказчиком длинных полей на сервере
 ![Long Input Test 1](manual_tests/long_input/long_input_test1.jpg)
