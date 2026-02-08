@@ -313,6 +313,11 @@ II. Разработчик забыл указать на клиенте IP ад
 ![Long Input Test 1](manual_tests/long_input/long_input_test1.jpg)
 ![Long Input Test 2](manual_tests/long_input/long_input_test2.jpg)
 
+## Скриншоты мануального теста локализации
+![Тест локализации 1](manual_tests/localization/localization_1.jpg)
+![Тест локализации 2](manual_tests/localization/localization_2.jpg)
+![Тест локализации 3](manual_tests/localization/localization_3.jpg)
+
 ## Скриншоты мануального теста кейса, когда разработчик забыл указать на клиенте IP адрес либо порт Бэкенд сервера
 ![На клиенте не указан IP адрес либо порт бэкенд сервера](manual_tests/client_no_server_data/client_no_server_data.jpg)
 
