@@ -1,6 +1,7 @@
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_fade_slide_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/widgets/model_finder_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/widgets/scan_result_widget.dart';
@@ -32,9 +33,9 @@ class HomePageUiBuilder {
       );
     } else {
       return AnimatedFadeSlideWidget(
-        child: const Center(
+        child: Center(
           child: Text(
-            'Tap to find model',
+            AppLocalizations.of(context).tapToFindModel,
             style: TextStyle(color: AppTheme.textPrimary),
           ),
         ),

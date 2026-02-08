@@ -1,4 +1,5 @@
 import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/shop_goods_availability/protocols/goods_in_stock_repository_protocol.dart';
+import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:anton_zyryanov_barcode_scanner/models/shop/shop_item.dart';
 
 class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
@@ -154,7 +155,7 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
         return ShopItem(
           imageUrl:
               'https://images.icon-icons.com/945/PNG/512/Office_-12_icon-icons.com_73953.png',
-          name: 'Item not found in shop',
+          name: AppLocalizations.current.itemNotFoundInShop,
           sizesInStock: {},
         );
     }

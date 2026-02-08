@@ -3,6 +3,7 @@ import 'package:anton_zyryanov_barcode_scanner/design_configs/icon_sizing_config
 import 'package:anton_zyryanov_barcode_scanner/design_configs/responsive_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/spacing_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/typography_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_button_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_fade_slide_widget.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +58,7 @@ class ErrorAlertWidget extends StatelessWidget {
             AnimatedFadeSlideWidget(
               delay: const Duration(milliseconds: 100),
               child: Text(
-                'Error',
+                AppLocalizations.of(context).errorTitle,
                 style: HeadingStyles.headingSmall.copyWith(
                   color: DarkThemeColors.textPrimaryDark,
                 ),
@@ -81,9 +82,9 @@ class ErrorAlertWidget extends StatelessWidget {
                 width: double.infinity,
                 child: AnimatedButtonWidget(
                   onPressed: onClose,
-                  child: const Text(
-                    'OK',
-                    style: TextStyle(color: AppTheme.textOnButton),
+                  child: Text(
+                    AppLocalizations.of(context).ok,
+                    style: const TextStyle(color: AppTheme.textOnButton),
                   ),
                 ),
               ),

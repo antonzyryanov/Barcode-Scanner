@@ -4,6 +4,7 @@ import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/responsive_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/spacing_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/typography_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_fade_slide_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/widgets/model_finder_widget.dart';
 import 'package:flutter/material.dart';
@@ -78,9 +79,9 @@ class ShopItemWidget extends StatelessWidget {
         SizedBox(height: SmallSpacing.spacing16),
         AnimatedFadeSlideWidget(
           delay: const Duration(milliseconds: 300),
-          child: const Text(
-            'Sizes in stock:',
-            style: TextStyle(color: AppTheme.textPrimary),
+          child: Text(
+            AppLocalizations.of(context).sizesInStock,
+            style: const TextStyle(color: AppTheme.textPrimary),
           ),
         ),
         SizedBox(height: MicroSpacing.spacing8),
@@ -99,14 +100,14 @@ class ShopItemWidget extends StatelessWidget {
               child: ListTile(
                 contentPadding: EdgeInsets.zero,
                 title: Text(
-                  'Size $size',
+                  AppLocalizations.of(context).sizeLabel(size),
                   style: const TextStyle(
                     color: AppTheme.textPrimary,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 trailing: Text(
-                  'In stock: $stock',
+                  AppLocalizations.of(context).inStockLabel(stock),
                   style: const TextStyle(
                     color: AppTheme.textPrimary,
                     fontWeight: FontWeight.w600,

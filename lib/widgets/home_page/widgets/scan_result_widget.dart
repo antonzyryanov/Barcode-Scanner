@@ -2,6 +2,7 @@ import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/icon_sizing_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/spacing_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/typography_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class ScanResultWidget extends StatelessWidget {
@@ -16,8 +17,8 @@ class ScanResultWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
+            AppLocalizations.of(context).resultLabel(result),
             textAlign: TextAlign.center,
-            'Result: $result',
             style: HeadingStyles.headingMedium.copyWith(
               color: AppTheme.textPrimary,
             ),

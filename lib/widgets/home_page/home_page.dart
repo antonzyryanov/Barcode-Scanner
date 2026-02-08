@@ -3,6 +3,7 @@ import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/animation_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/error_presenter.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/sneaker_loader_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/ui_builder/home_page_ui_builder.dart';
@@ -18,7 +19,7 @@ class HomePageWidget extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppTheme.primary,
       appBar: AppBar(
-        title: const Text('Sneakers Store'),
+        title: Text(AppLocalizations.of(context).appName),
         backgroundColor: AppTheme.background,
         elevation: 4,
         centerTitle: false,

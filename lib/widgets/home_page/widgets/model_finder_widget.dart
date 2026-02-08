@@ -4,6 +4,7 @@ import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/responsive_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/spacing_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/typography_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_button_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/error_presenter.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/scanner/barcode_scanner_page.dart';
@@ -33,7 +34,7 @@ class ModelFinderWidget extends StatelessWidget {
         ),
         SizedBox(height: SmallSpacing.spacing12),
         Text(
-          'Tap to find model',
+          AppLocalizations.of(context).tapToFindModel,
           style: HeadingStyles.headingSmall.copyWith(
             color: AppTheme.textPrimary,
           ),
@@ -53,15 +54,16 @@ class ModelFinderWidget extends StatelessWidget {
                   if (context.mounted) {
                     ErrorPresenter.showError(
                       context: context,
-                      error:
-                          'Camera permission denied. Please grant permission in phone settings.',
+                      error: AppLocalizations.of(
+                        context,
+                      ).cameraPermissionDenied,
                     );
                   }
                 }
               },
-              child: const Text(
-                'Scan',
-                style: TextStyle(color: AppTheme.textOnButton),
+              child: Text(
+                AppLocalizations.of(context).scan,
+                style: const TextStyle(color: AppTheme.textOnButton),
               ),
             ),
           ),

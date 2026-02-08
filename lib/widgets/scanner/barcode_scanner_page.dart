@@ -1,3 +1,4 @@
+import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
@@ -10,7 +11,7 @@ class BarcodeScannerPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Point to barcode'),
+        title: Text(AppLocalizations.of(context).pointToBarcode),
         leading: IconButton(
           onPressed: () => Navigator.pop(context, '-1'),
           icon: const Icon(Icons.close),
