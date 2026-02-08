@@ -14,6 +14,12 @@ class GoodsInStockNetworkRepository implements GoodsInStockRepositoryProtocol {
 
   @override
   Future<ShopItem> retrieveGoodsInStock(String scannedString) async {
+    if (serverIP.isEmpty || serverPort.isEmpty) {
+      throw Exception(
+        'На клиенте не указан IP адрес либо порт Backend сервера. Обратитесь к документации: https://github.com/antonzyryanov/Barcode-Scanner/blob/main/README.md',
+      );
+    }
+
     final pattern = RegExp(r'^az_barcode_sneakers_(\d+)$');
     final match = pattern.firstMatch(scannedString);
     if (match == null) {

@@ -1,7 +1,7 @@
-import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/icon_sizing_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/spacing_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/typography_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/icon_sizing_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/spacing_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/typography_config.dart';
 import 'package:flutter/material.dart';
 
 class ScanResultWidget extends StatelessWidget {
@@ -18,11 +18,11 @@ class ScanResultWidget extends StatelessWidget {
           Text(
             textAlign: TextAlign.center,
             'Result: $result',
-            style: TypographyConfig.headingMedium.copyWith(
+            style: HeadingStyles.headingMedium.copyWith(
               color: AppTheme.textPrimary,
             ),
           ),
-          SizedBox(height: SpacingConfig.spacing16),
+          SizedBox(height: SmallSpacing.spacing16),
           const SizedBox(
             width: IconSizingConfig.loadingIndicatorSize * 0.67,
             height: IconSizingConfig.loadingIndicatorSize * 0.67,

@@ -1,8 +1,8 @@
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/events/main_events.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/animation_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/animation_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/error_presenter.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/sneaker_loader_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/ui_builder/home_page_ui_builder.dart';
@@ -40,16 +40,15 @@ class HomePageWidget extends StatelessWidget {
         child: BlocBuilder<MainBloc, MainState>(
           builder: (context, state) {
             return AnimatedSwitcher(
-              duration: AnimationConfig.pageTransitionDuration,
-              switchInCurve: AnimationConfig.fadeInCurve,
-              switchOutCurve: AnimationConfig.fadeOutCurve,
+              duration: TransitionDurations.pageTransitionDuration,
+              switchInCurve: AnimationCurves.fadeInCurve,
+              switchOutCurve: AnimationCurves.fadeOutCurve,
               transitionBuilder: (Widget child, Animation<double> animation) {
-                // Комбинация Fade и Slide для более плавного эффекта
                 final fadeAnimation = Tween<double>(begin: 0.0, end: 1.0)
                     .animate(
                       CurvedAnimation(
                         parent: animation,
-                        curve: AnimationConfig.fadeInCurve,
+                        curve: AnimationCurves.fadeInCurve,
                       ),
                     );
 
@@ -60,7 +59,7 @@ class HomePageWidget extends StatelessWidget {
                     ).animate(
                       CurvedAnimation(
                         parent: animation,
-                        curve: AnimationConfig.slideUpCurve,
+                        curve: AnimationCurves.slideUpCurve,
                       ),
                     );
 

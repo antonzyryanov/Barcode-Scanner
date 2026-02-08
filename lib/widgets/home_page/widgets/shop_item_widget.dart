@@ -1,10 +1,10 @@
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/animation_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/responsive_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/spacing_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/typography_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/responsive_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/spacing_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/typography_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_fade_slide_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/widgets/model_finder_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +43,7 @@ class ShopItemWidget extends StatelessWidget {
                 }
                 return Container(
                   height: imageHeight,
-                  color: AppTheme.transparent,
+                  color: UtilityColors.transparent,
                   child: const Center(
                     child: SizedBox(
                       width: 150,
@@ -59,23 +59,23 @@ class ShopItemWidget extends StatelessWidget {
               },
               errorBuilder: (context, error, stackTrace) => Container(
                 height: imageHeight,
-                color: AppTheme.errorPlaceholder,
+                color: UtilityColors.errorPlaceholder,
                 child: const Icon(Icons.broken_image, size: 50),
               ),
             ),
           ),
         ),
-        SizedBox(height: SpacingConfig.spacing16),
+        SizedBox(height: SmallSpacing.spacing16),
         AnimatedFadeSlideWidget(
           delay: const Duration(milliseconds: 200),
           child: Text(
             state.shopItem?.name ?? '',
-            style: TypographyConfig.headingLarge.copyWith(
+            style: HeadingStyles.headingLarge.copyWith(
               color: AppTheme.textPrimary,
             ),
           ),
         ),
-        SizedBox(height: SpacingConfig.spacing16),
+        SizedBox(height: SmallSpacing.spacing16),
         AnimatedFadeSlideWidget(
           delay: const Duration(milliseconds: 300),
           child: const Text(
@@ -83,7 +83,7 @@ class ShopItemWidget extends StatelessWidget {
             style: TextStyle(color: AppTheme.textPrimary),
           ),
         ),
-        SizedBox(height: SpacingConfig.spacing8),
+        SizedBox(height: MicroSpacing.spacing8),
         ListView.builder(
           shrinkWrap: true,
           padding: EdgeInsets.zero,
@@ -116,12 +116,12 @@ class ShopItemWidget extends StatelessWidget {
             );
           },
         ),
-        SizedBox(height: SpacingConfig.spacing20),
+        SizedBox(height: MediumSpacing.spacing20),
         AnimatedFadeSlideWidget(
           delay: Duration(milliseconds: 400 + (sizesCount * 80) + 100),
           child: Center(child: ModelFinderWidget(mainBloc: mainBloc)),
         ),
-        SizedBox(height: SpacingConfig.spacing20),
+        SizedBox(height: MediumSpacing.spacing20),
       ],
     );
   }

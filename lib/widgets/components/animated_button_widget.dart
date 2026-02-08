@@ -1,6 +1,6 @@
-import 'package:anton_zyryanov_barcode_scanner/theme/animation_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/spacing_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/animation_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/spacing_config.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedButtonWidget extends StatefulWidget {
@@ -27,20 +27,20 @@ class _AnimatedButtonWidgetState extends State<AnimatedButtonWidget>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: AnimationConfig.buttonPressDuration,
-      reverseDuration: AnimationConfig.buttonReleaseDuration,
+      duration: TransitionDurations.buttonPressDuration,
+      reverseDuration: TransitionDurations.buttonReleaseDuration,
       vsync: this,
     );
 
     _scaleAnimation =
         Tween<double>(
-          begin: AnimationConfig.buttonScaleReleased,
-          end: AnimationConfig.buttonScalePressed,
+          begin: AnimationParameters.buttonScaleReleased,
+          end: AnimationParameters.buttonScalePressed,
         ).animate(
           CurvedAnimation(
             parent: _controller,
-            curve: AnimationConfig.buttonPressCurve,
-            reverseCurve: AnimationConfig.buttonReleaseCurve,
+            curve: AnimationCurves.buttonPressCurve,
+            reverseCurve: AnimationCurves.buttonReleaseCurve,
           ),
         );
   }
@@ -93,8 +93,8 @@ class _AnimatedButtonWidgetState extends State<AnimatedButtonWidget>
             disabledBackgroundColor: AppTheme.buttonBackground,
             disabledForegroundColor: AppTheme.buttonBackground,
             padding: const EdgeInsets.symmetric(
-              horizontal: SpacingConfig.spacing16,
-              vertical: SpacingConfig.spacing12,
+              horizontal: SmallSpacing.spacing16,
+              vertical: SmallSpacing.spacing12,
             ),
           ),
           child: widget.child,

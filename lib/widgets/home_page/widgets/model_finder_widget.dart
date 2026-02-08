@@ -1,9 +1,9 @@
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/events/main_events.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/responsive_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/spacing_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/typography_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/responsive_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/spacing_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/typography_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_button_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/error_presenter.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/scanner/barcode_scanner_page.dart';
@@ -31,15 +31,15 @@ class ModelFinderWidget extends StatelessWidget {
             BlendMode.srcIn,
           ),
         ),
-        SizedBox(height: SpacingConfig.spacing12),
+        SizedBox(height: SmallSpacing.spacing12),
         Text(
           'Tap to find model',
-          style: TypographyConfig.headingSmall.copyWith(
+          style: HeadingStyles.headingSmall.copyWith(
             color: AppTheme.textPrimary,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(SpacingConfig.spacing16),
+          padding: const EdgeInsets.all(SmallSpacing.spacing16),
           child: SizedBox(
             width: .infinity,
             child: AnimatedButtonWidget(

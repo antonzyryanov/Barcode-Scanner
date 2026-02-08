@@ -1,10 +1,10 @@
-import 'package:anton_zyryanov_barcode_scanner/theme/animation_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/icon_sizing_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/responsive_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/spacing_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/typography_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/icon_sizing_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/responsive_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/spacing_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/typography_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_button_widget.dart';
+import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_fade_slide_widget.dart';
 import 'package:flutter/material.dart';
 
 class ErrorAlertWidget extends StatelessWidget {
@@ -21,8 +21,8 @@ class ErrorAlertWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final isMobile = ResponsiveConfig.isMobile(context);
     final padding = isMobile
-        ? SpacingConfig.dialogPaddingSmall
-        : SpacingConfig.dialogPaddingLarge;
+        ? ContainerSpacing.dialogPaddingSmall
+        : ContainerSpacing.dialogPaddingLarge;
 
     return SingleChildScrollView(
       child: Container(
@@ -33,7 +33,7 @@ class ErrorAlertWidget extends StatelessWidget {
           border: Border.all(color: AppTheme.primary, width: 1.5),
           boxShadow: const [
             BoxShadow(
-              color: AppTheme.shadow,
+              color: ShadowColors.shadow,
               blurRadius: 20,
               offset: Offset(0, 10),
             ),
@@ -53,28 +53,28 @@ class ErrorAlertWidget extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: SpacingConfig.spacing16),
+            SizedBox(height: SmallSpacing.spacing16),
             AnimatedFadeSlideWidget(
               delay: const Duration(milliseconds: 100),
               child: Text(
                 'Error',
-                style: TypographyConfig.headingSmall.copyWith(
-                  color: AppTheme.textPrimaryDark,
+                style: HeadingStyles.headingSmall.copyWith(
+                  color: DarkThemeColors.textPrimaryDark,
                 ),
               ),
             ),
-            SizedBox(height: SpacingConfig.spacing12),
+            SizedBox(height: SmallSpacing.spacing12),
             AnimatedFadeSlideWidget(
               delay: const Duration(milliseconds: 200),
               child: Text(
                 error,
                 textAlign: TextAlign.center,
-                style: TypographyConfig.bodySmall.copyWith(
-                  color: AppTheme.textSecondaryDark,
+                style: BodyTextStyles.bodySmall.copyWith(
+                  color: DarkThemeColors.textSecondaryDark,
                 ),
               ),
             ),
-            SizedBox(height: SpacingConfig.spacing20),
+            SizedBox(height: MediumSpacing.spacing20),
             AnimatedFadeSlideWidget(
               delay: const Duration(milliseconds: 300),
               child: SizedBox(

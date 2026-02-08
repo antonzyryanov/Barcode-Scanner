@@ -1,4 +1,4 @@
-import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class SneakerLoaderWidget extends StatelessWidget {

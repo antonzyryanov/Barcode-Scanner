@@ -1,4 +1,4 @@
-import 'package:anton_zyryanov_barcode_scanner/theme/icon_sizing_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/icon_sizing_config.dart';
 import 'package:flutter/material.dart';
 
 class ResponsiveConfig {

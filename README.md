@@ -185,7 +185,7 @@ https://drive.google.com/drive/folders/1pdoobQEN1ZoZ0jdwCH0acMS6egbV-kFs?usp=sha
 
 15. Чистый код
 
-Удалены почти все комментариии.
+Полностью удалены все комментарии. Код поясняет сам себя. При этом написана подробная документация в отдельном файле
 
 Деление виджета с главной страницы на компоненты.
 
@@ -292,6 +292,13 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 Отступы, шрифты и размеры иконок стандартизированы. Их значения вынесены в отдельные файлы: spacing_config.dart, typography_config.dart, icon_sizing_config.dart
 
+4. Обработаны исключительные кейсы:
+
+I. Ввод заказчиком длинных полей на сервере
+II. Разработчик забыл указать на клиенте IP адрес либо порт Бэкенд сервера
+
+Скриншоты ниже
+
 ## Скриншоты мануальных тестов CI
 ![CI Manual Test 1](manual_tests/ci/ci_test_1.jpg)
 ![CI Manual Test 2](manual_tests/ci/ci_test_2.jpg)
@@ -302,6 +309,9 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ## Скриншоты мануального теста кейса ввода заказчиком длинных полей на сервере
 ![Long Input Test 1](manual_tests/long_input/long_input_test1.jpg)
 ![Long Input Test 2](manual_tests/long_input/long_input_test2.jpg)
+
+## Скриншоты мануального теста кейса, когда разработчик забыл указать на клиенте IP адрес либо порт Бэкенд сервера
+![Long Input Test 1](manual_tests/client_no_sever_data/client_no_server_data.jpg)
 
 ## Документация к анимациям проекта:
 

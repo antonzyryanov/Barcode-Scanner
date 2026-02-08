@@ -1,7 +1,7 @@
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/animation_config.dart';
-import 'package:anton_zyryanov_barcode_scanner/theme/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
+import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_fade_slide_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/widgets/model_finder_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/widgets/scan_result_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/widgets/shop_item_widget.dart';
