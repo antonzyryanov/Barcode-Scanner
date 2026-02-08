@@ -237,6 +237,18 @@ https://drive.google.com/drive/folders/1pdoobQEN1ZoZ0jdwCH0acMS6egbV-kFs?usp=sha
 Зафиксирует все изменения с указанным сообщением
 Выполнит пуш в удалённый репозиторий git
 
+То же самое, но с проверкой перед пушом, что проект билдится:
+
+```powershell
+.\ci-build.ps1
+```
+
+Или с пользовательским сообщением коммита:
+
+```powershell
+.\ci-build.ps1 -CommitMessage "Your custom message"
+```
+
 #### Вариант 2: GitHub Actions (Automated CI/CD)
 
 GitHub Actions автоматически запускает тесты при каждом пуше в ветки main или develop, а также при создании pull-запросов.
