@@ -6,7 +6,7 @@ class AppTheme {
 
   static const Color background = Colors.black;
   static const Color dialogBackground = Colors.white;
-  static const Color loaderBackground = Colors.black;
+  static const Color loaderBackground = Color(0xFF050306);
 
   static const Color textPrimary = Colors.white;
   static const Color textSecondary = Colors.white70;
