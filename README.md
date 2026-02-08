@@ -22,6 +22,8 @@ https://github.com/antonzyryanov/Barcode-Scanner-Backend.git
 6. Ввести "flutter pub get" для загрузки зависимостей
 7. Ввести "flutter run" для сборки и запуска
 
+Если физический девайс слабый, запускать через "flutter run --release" для более лучшей производительности
+
 ## Скриншоты приложения
 
 ### App Screenshot 1
