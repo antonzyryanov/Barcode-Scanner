@@ -24,6 +24,7 @@ class AppLocalizations {
     'en': {
       'appName': 'Sneakers Store',
       'errorTitle': 'Error',
+      'infoTitle': 'Info',
       'ok': 'OK',
       'tapToFindModel': 'Tap to find model',
       'scan': 'Scan',
@@ -54,10 +55,13 @@ class AppLocalizations {
       'discont': 'Discont',
       'subscriptionDeleted':
           'You already had subscription. Now its deleted for test purposes.',
+      'subscriptionActivatedMessage':
+          'Congratulations! Your subscription has been activated',
     },
     'ru': {
       'appName': 'Магазин кроссовок',
       'errorTitle': 'Ошибка',
+      'infoTitle': 'Информация',
       'ok': 'ОК',
       'tapToFindModel': 'Нажмите, чтобы найти модель',
       'scan': 'Сканировать',
@@ -88,6 +92,8 @@ class AppLocalizations {
       'discont': 'Скидка',
       'subscriptionDeleted':
           'У вас уже была подписка. Сейчас она удалена для тестирования.',
+      'subscriptionActivatedMessage':
+          'Поздравляем! Ваша подписка успешно активирована',
     },
   };
 
@@ -106,6 +112,7 @@ class AppLocalizations {
 
   String get appName => _value('appName');
   String get errorTitle => _value('errorTitle');
+  String get infoTitle => _value('infoTitle');
   String get ok => _value('ok');
   String get tapToFindModel => _value('tapToFindModel');
   String get scan => _value('scan');
@@ -126,6 +133,8 @@ class AppLocalizations {
   String get yearlySubscription => _value('yearlySubscription');
   String get discont => _value('discont');
   String get subscriptionDeleted => _value('subscriptionDeleted');
+  String get subscriptionActivatedMessage =>
+      _value('subscriptionActivatedMessage');
 
   String sizeLabel(String size) => _format('sizeLabel', {'size': size});
 
