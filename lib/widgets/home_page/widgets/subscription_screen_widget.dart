@@ -7,6 +7,7 @@ import 'package:anton_zyryanov_barcode_scanner/design_configs/typography_config.
 import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_button_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/animated_fade_slide_widget.dart';
+import 'package:anton_zyryanov_barcode_scanner/widgets/components/subscription_plan_cell_widget.dart';
 import 'package:flutter/material.dart';
 
 enum SubscriptionPlan { monthly, yearly }
@@ -79,8 +80,7 @@ class _SubscriptionScreenWidgetState extends State<SubscriptionScreenWidget> {
                   SizedBox(height: MediumSpacing.spacing24),
                   AnimatedFadeSlideWidget(
                     delay: const Duration(milliseconds: 100),
-                    child: _buildPlanCell(
-                      context: context,
+                    child: SubscriptionPlanCellWidget(
                       title: localizations.monthlySubscription,
                       isSelected: selectedPlan == SubscriptionPlan.monthly,
                       onTap: () {
@@ -93,8 +93,7 @@ class _SubscriptionScreenWidgetState extends State<SubscriptionScreenWidget> {
                   SizedBox(height: SmallSpacing.spacing12),
                   AnimatedFadeSlideWidget(
                     delay: const Duration(milliseconds: 200),
-                    child: _buildPlanCell(
-                      context: context,
+                    child: SubscriptionPlanCellWidget(
                       title: localizations.yearlySubscription,
                       isSelected: selectedPlan == SubscriptionPlan.yearly,
                       hasDiscount: true,
@@ -129,83 +128,6 @@ class _SubscriptionScreenWidgetState extends State<SubscriptionScreenWidget> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildPlanCell({
-    required BuildContext context,
-    required String title,
-    required bool isSelected,
-    required VoidCallback onTap,
-    bool hasDiscount = false,
-  }) {
-    final localizations = AppLocalizations.of(context);
-
-    return GestureDetector(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250),
-        width: double.infinity,
-        padding: const EdgeInsets.all(SmallSpacing.spacing16),
-        decoration: BoxDecoration(
-          color: isSelected
-              ? StatusColors.warning
-              : Colors.black.withValues(alpha: 0.35),
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: isSelected ? StatusColors.warning : Colors.white24,
-            width: 1.5,
-          ),
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: Text(
-                title,
-                style: BodyTextStyles.bodySmall.copyWith(
-                  color: isSelected
-                      ? DarkThemeColors.textPrimaryDark
-                      : AppTheme.textPrimary,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            if (hasDiscount) ...[
-              SizedBox(
-                width: IconSizingConfig.iconSmall,
-                height: IconSizingConfig.iconSmall,
-                child: Image.asset('assets/paywall/premium_icon.png'),
-              ),
-              SizedBox(width: MicroSpacing.spacing8),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: MicroSpacing.spacing8,
-                  vertical: MicroSpacing.spacing4,
-                ),
-                decoration: BoxDecoration(
-                  color: StatusColors.error,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  localizations.discont,
-                  style: BodyTextStyles.bodySmall.copyWith(
-                    color: AppTheme.textPrimary,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              SizedBox(width: SmallSpacing.spacing12),
-            ],
-            Icon(
-              isSelected ? Icons.radio_button_checked : Icons.radio_button_off,
-              color: isSelected
-                  ? DarkThemeColors.textPrimaryDark
-                  : AppTheme.textPrimary,
-            ),
-          ],
-        ),
       ),
     );
   }
