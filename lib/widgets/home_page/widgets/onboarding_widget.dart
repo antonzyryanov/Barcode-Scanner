@@ -40,7 +40,10 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                   fit: StackFit.expand,
                   children: [
                     ...previousChildren,
-                    if (currentChild != null) currentChild,
+                    ...?switch (currentChild) {
+                      null => null,
+                      final child => [child],
+                    },
                   ],
                 );
               },
