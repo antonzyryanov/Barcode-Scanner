@@ -4,13 +4,23 @@ import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/shop_goods_a
 import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/shop_goods_availability/protocols/goods_in_stock_repository_protocol.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
+import 'package:anton_zyryanov_barcode_scanner/models/user.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class DIContainer {
-  AppSettings appSettings = AppSettings();
+  final AppSettings appSettings;
+  final User user;
+
+  DIContainer({required this.user, AppSettings? appSettings})
+    : appSettings = appSettings ?? AppSettings();
+
+  static Future<DIContainer> create() async {
+    final user = await User.fromSharedPreferences();
+    return DIContainer(user: user);
+  }
 
   GoodsInStockRepositoryProtocol createDataLayerWorker() {
     if (appSettings.isMockOn) {
@@ -46,7 +56,7 @@ class DIContainer {
         return supportedLocales.first;
       },
       home: BlocProvider(
-        create: (_) => MainBloc(worker: dataWorker),
+        create: (_) => MainBloc(worker: dataWorker, user: user),
         child: HomePageWidget(),
       ),
     );

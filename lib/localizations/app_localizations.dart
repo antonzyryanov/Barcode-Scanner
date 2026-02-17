@@ -42,6 +42,18 @@ class AppLocalizations {
       'failedRetrieveGoods': 'Failed to retrieve goods: {error}',
       'itemNotFoundInShop': 'Item not found in shop',
       'barcodeListEmpty': 'Barcode list is empty',
+      'continueButton': 'Continue',
+      'onboardingPageOneText':
+          'Scan sneaker barcodes and instantly see model details and stock.',
+      'onboardingPageTwoText':
+          'Use subscription to unlock premium access and test paywall flow.',
+      'purchase': 'Purchase',
+      'subscriptionTitle': 'Choose your subscription',
+      'monthlySubscription': 'Monthly Subscription',
+      'yearlySubscription': 'Year Subscription',
+      'discont': 'Discont',
+      'subscriptionDeleted':
+          'You already had subscription. Now its deleted for test purposes.',
     },
     'ru': {
       'appName': 'Магазин кроссовок',
@@ -64,6 +76,18 @@ class AppLocalizations {
       'failedRetrieveGoods': 'Не удалось получить данные: {error}',
       'itemNotFoundInShop': 'Товар не найден в магазине',
       'barcodeListEmpty': 'Список штрих-кодов пуст',
+      'continueButton': 'Продолжить',
+      'onboardingPageOneText':
+          'Сканируйте штрих-коды кроссовок и сразу получайте данные о модели и наличии.',
+      'onboardingPageTwoText':
+          'Используйте подписку, чтобы открыть премиум доступ и проверить paywall.',
+      'purchase': 'Купить',
+      'subscriptionTitle': 'Выберите подписку',
+      'monthlySubscription': 'Месячная подписка',
+      'yearlySubscription': 'Годовая подписка',
+      'discont': 'Скидка',
+      'subscriptionDeleted':
+          'У вас уже была подписка. Сейчас она удалена для тестирования.',
     },
   };
 
@@ -93,6 +117,15 @@ class AppLocalizations {
   String get itemNotFound => _value('itemNotFound');
   String get itemNotFoundInShop => _value('itemNotFoundInShop');
   String get barcodeListEmpty => _value('barcodeListEmpty');
+  String get continueButton => _value('continueButton');
+  String get onboardingPageOneText => _value('onboardingPageOneText');
+  String get onboardingPageTwoText => _value('onboardingPageTwoText');
+  String get purchase => _value('purchase');
+  String get subscriptionTitle => _value('subscriptionTitle');
+  String get monthlySubscription => _value('monthlySubscription');
+  String get yearlySubscription => _value('yearlySubscription');
+  String get discont => _value('discont');
+  String get subscriptionDeleted => _value('subscriptionDeleted');
 
   String sizeLabel(String size) => _format('sizeLabel', {'size': size});
 

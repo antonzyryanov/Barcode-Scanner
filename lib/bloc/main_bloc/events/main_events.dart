@@ -2,6 +2,8 @@ import 'package:anton_zyryanov_barcode_scanner/models/shop/shop_item.dart';
 
 abstract class MainEvent {}
 
+class ResolveStartupStateEvent extends MainEvent {}
+
 class StartScanningEvent extends MainEvent {}
 
 class SetScanResultEvent extends MainEvent {
@@ -20,3 +22,7 @@ class DataLayerDataError extends MainEvent {
   final String message;
   DataLayerDataError(this.message);
 }
+
+class ShowPaywallEvent extends MainEvent {}
+
+class CompleteOnboardingEvent extends MainEvent {}

@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  final DIContainer diContainer = await DIContainer.create();
+  runApp(MyApp(diContainer: diContainer));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.diContainer});
+
+  final DIContainer diContainer;
 
   @override
   Widget build(BuildContext context) {
-    final DIContainer diContainer = DIContainer();
     return diContainer.buildApp(context);
   }
 }

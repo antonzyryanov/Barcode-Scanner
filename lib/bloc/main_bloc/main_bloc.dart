@@ -6,13 +6,15 @@ import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/state/data_l
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/events/main_events.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/state/main_state.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/timing_config.dart';
+import 'package:anton_zyryanov_barcode_scanner/models/user.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {
   final DataLayerBloc _dataLayerBloc;
+  final User user;
   late final StreamSubscription _dataLayerSubscription;
 
-  MainBloc({required GoodsInStockRepositoryProtocol worker})
+  MainBloc({required GoodsInStockRepositoryProtocol worker, required this.user})
     : _dataLayerBloc = DataLayerBloc(worker: worker),
       super(MainLoaderShown()) {
     _dataLayerSubscription = _dataLayerBloc.stream.listen((state) {
@@ -46,9 +48,25 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       emit(MainInitial());
     });
 
+    on<ResolveStartupStateEvent>((event, emit) {
+      if (user.isSubscribed) {
+        emit(MainInitial());
+      } else {
+        emit(OnboardingShowing());
+      }
+    });
+
+    on<ShowPaywallEvent>((event, emit) {
+      emit(PaywallShowing());
+    });
+
+    on<CompleteOnboardingEvent>((event, emit) {
+      emit(MainInitial());
+    });
+
     Future.delayed(TimingConfig.autoResetDelay, () {
       if (!isClosed) {
-        add(ResetMainStateEvent());
+        add(ResolveStartupStateEvent());
       }
     });
   }

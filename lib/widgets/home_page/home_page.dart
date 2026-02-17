@@ -7,7 +7,6 @@ import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/timing_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/components/error_presenter.dart';
-import 'package:anton_zyryanov_barcode_scanner/widgets/components/sneaker_loader_widget.dart';
 import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/ui_builder/home_page_ui_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -87,29 +86,7 @@ class HomePageWidget extends StatelessWidget {
     MainState state,
     MainBloc mainBloc,
   ) {
-    if (state is MainLoaderShown) {
-      return const SneakerLoaderWidget(key: ValueKey('loader'));
-    }
-
-    return LayoutBuilder(
-      key: ValueKey('content_${state.runtimeType}'),
-      builder: (context, constraints) {
-        return SingleChildScrollView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: constraints.maxHeight),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: HomePageUiBuilder.buildHomePageUI(
-                context,
-                state,
-                mainBloc,
-              ),
-            ),
-          ),
-        );
-      },
-    );
+    return HomePageUiBuilder.buildContent(context, state, mainBloc);
   }
 
   void closeShownError(BuildContext context, MainBloc mainBloc) {

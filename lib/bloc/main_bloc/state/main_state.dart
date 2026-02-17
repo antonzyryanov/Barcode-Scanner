@@ -6,6 +6,10 @@ class MainLoaderShown extends MainState {}
 
 class MainInitial extends MainState {}
 
+class OnboardingShowing extends MainState {}
+
+class PaywallShowing extends MainState {}
+
 class MainLoading extends MainState {}
 
 class MainScanResult extends MainState {

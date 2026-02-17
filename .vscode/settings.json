@@ -1,3 +1,15 @@
 {
-    "cmake.sourceDirectory": "C:/Users/user/Documents/Barcode Scanner/barcode_scanner/linux"
+    "cmake.sourceDirectory": "C:/Users/user/Documents/Barcode Scanner/barcode_scanner/linux",
+    "git.decorations.enabled": true,
+    "scm.diffDecorations": "all",
+    "workbench.colorCustomizations": {
+        "editorGutter.modifiedBackground": "#FFD54F",
+        "editorOverviewRuler.modifiedForeground": "#FFD54F",
+        "editorGutter.deletedBackground": "#EF5350",
+        "editorOverviewRuler.deletedForeground": "#EF5350",
+        "diffEditor.removedTextBackground": "#EF535044",
+        "diffEditor.removedLineBackground": "#EF535022",
+        "diffEditor.insertedTextBackground": "#FFD54F44",
+        "diffEditor.insertedLineBackground": "#FFD54F22"
+    }
 }
