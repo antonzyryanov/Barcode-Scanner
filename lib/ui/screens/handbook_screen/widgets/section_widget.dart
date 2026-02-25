@@ -6,7 +6,7 @@ import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
 
 class SectionWidget extends StatelessWidget {
   final dynamic section;
-  const SectionWidget({required this.section, Key? key}) : super(key: key);
+  const SectionWidget({required this.section, super.key});
 
   @override
   Widget build(BuildContext context) {

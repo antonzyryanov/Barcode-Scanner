@@ -7,8 +7,7 @@ import 'package:anton_zyryanov_barcode_scanner/design_configs/app_theme.dart';
 class ItemCell extends StatelessWidget {
   final int sectionId;
   final dynamic item;
-  const ItemCell({required this.sectionId, required this.item, Key? key})
-    : super(key: key);
+  const ItemCell({required this.sectionId, required this.item, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class ItemCell extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
+              color: Colors.grey.withValues(alpha: 0.2),
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),

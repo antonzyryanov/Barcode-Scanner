@@ -5,8 +5,7 @@ import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 
 class HandbookButtonWidget extends StatelessWidget {
   final MainBloc mainBloc;
-  const HandbookButtonWidget({Key? key, required this.mainBloc})
-    : super(key: key);
+  const HandbookButtonWidget({super.key, required this.mainBloc});
 
   @override
   Widget build(BuildContext context) {

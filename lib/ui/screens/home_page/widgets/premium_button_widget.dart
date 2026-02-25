@@ -7,8 +7,7 @@ import 'package:anton_zyryanov_barcode_scanner/ui/components/error_presenter.dar
 
 class PremiumButtonWidget extends StatelessWidget {
   final MainBloc mainBloc;
-  const PremiumButtonWidget({Key? key, required this.mainBloc})
-    : super(key: key);
+  const PremiumButtonWidget({super.key, required this.mainBloc});
 
   @override
   Widget build(BuildContext context) {

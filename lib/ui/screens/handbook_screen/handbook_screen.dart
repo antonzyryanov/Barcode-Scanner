@@ -4,12 +4,13 @@ import 'package:anton_zyryanov_barcode_scanner/design_configs/icon_sizing_config
 import 'package:anton_zyryanov_barcode_scanner/design_configs/responsive_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/design_configs/typography_config.dart';
 import 'package:anton_zyryanov_barcode_scanner/ui/components/animated_fade_slide_widget.dart';
-import 'package:flutter/material.dart';import 'widgets/section_widget.dart';
+import 'package:flutter/material.dart';
+import 'widgets/section_widget.dart';
 import 'widgets/handbook_tab_bar.dart';
 
 class HandbookScreen extends StatefulWidget {
   final HandbookBloc bloc;
-  const HandbookScreen({Key? key, required this.bloc}) : super(key: key);
+  const HandbookScreen({super.key, required this.bloc});
 
   @override
   State<HandbookScreen> createState() => _HandbookScreenState();

@@ -9,8 +9,8 @@ class HandbookTabBar extends StatelessWidget {
   const HandbookTabBar({
     required this.selectedIndex,
     required this.onTap,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static const List<String> _iconPaths = [
     'assets/images/handbook/tab_bar_icons/1.png',
