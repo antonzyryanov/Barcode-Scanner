@@ -15,7 +15,7 @@ class MicroSpacing {
 
 class SmallSpacing {
   const SmallSpacing();
-
+  static const double spacing8 = 8.0;
   static const double spacing12 = 12.0;
   static const double spacing16 = 16.0;
 }

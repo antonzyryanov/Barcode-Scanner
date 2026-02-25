@@ -1,0 +1,16 @@
+{
+  "id": 5,
+  "name": "Vans",
+  "items": [
+    {
+      "id": 1,
+      "title": "Vans Old Skool",
+      "description": "A classic Vans sneaker known for its durable design and iconic side stripe."
+    },
+    {
+      "id": 2,
+      "title": "Vans Sk8-Hi",
+      "description": "A high-top Vans sneaker known for its ankle support and stylish design."
+    }
+  ]
+}

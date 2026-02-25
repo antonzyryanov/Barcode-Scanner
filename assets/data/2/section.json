@@ -1,0 +1,31 @@
+{
+  "id": 2,
+  "name": "Air Jordan",
+  "items": [
+    {
+      "id": 1,
+      "title": "Air Jordan 1",
+      "description": "A legendary Nike sneaker known for its iconic design and cultural impact."
+    },
+    {
+      "id": 2,
+      "title": "Air Jordan 2",
+      "description": "A classic Nike sneaker known for its elegant design and comfort."
+    },
+    {
+      "id": 3,
+      "title": "Air Jordan 4",
+      "description": "A popular Nike sneaker known for its innovative design and cushioning."
+    },
+    {
+      "id": 4,
+      "title": "Air Jordan 5",
+      "description": "A stylish Nike sneaker known for its sleek design and comfort."
+    },
+    {
+      "id": 5,
+      "title": "Air Jordan 9",
+      "description": "A bold Nike sneaker known for its distinctive design and vibrant colorways."
+    }
+  ]
+}

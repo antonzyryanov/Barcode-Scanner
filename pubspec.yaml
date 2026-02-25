@@ -39,13 +39,29 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
-    - assets/onboarding/
-    - assets/paywall/
+    - assets/images/
+    - assets/images/onboarding/
+    - assets/images/home_page/
+    - assets/images/paywall/
+    - assets/images/handbook/tab_bar_icons/
+    - assets/images/handbook/sections/
+    - assets/images/handbook/sections/1/
+    - assets/images/handbook/sections/2/
+    - assets/images/handbook/sections/3/
+    - assets/images/handbook/sections/4/
+    - assets/images/handbook/sections/5/
+    - assets/images/icons/
+    - assets/images/errors/
+    - assets/images/loader/
+    - assets/data/1/section.json
+    - assets/data/2/section.json
+    - assets/data/3/section.json
+    - assets/data/4/section.json
+    - assets/data/5/section.json
 
 
 flutter_launcher_icons:
   android: "ic_launcher"
   ios: true
-  image_path: "assets/app_icon.jpg"
+  image_path: "assets/images/app_icon/app_icon.jpg"
   min_sdk_android: 21

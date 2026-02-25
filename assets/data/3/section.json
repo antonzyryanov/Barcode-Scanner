@@ -1,0 +1,21 @@
+{
+  "id": 3,
+  "name": "Adidas",
+  "items": [
+    {
+      "id": 1,
+      "title": "Adidas T-Mac 1",
+      "description": "A classic Adidas sneaker known for its comfort and style."
+    },
+    {
+      "id": 2,
+      "title": "Adidas T-Mac 2",
+      "description": "A classic Adidas sneaker known for its elegant design and comfort."
+    },
+    {
+      "id": 3,
+      "title": "Adidas T-Mac 3",
+      "description": "A popular Adidas sneaker known for its innovative design and cushioning."
+    }
+  ]
+}

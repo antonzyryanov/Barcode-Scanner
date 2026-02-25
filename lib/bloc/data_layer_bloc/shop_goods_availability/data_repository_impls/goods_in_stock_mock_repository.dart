@@ -1,13 +1,27 @@
 import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/shop_goods_availability/protocols/goods_in_stock_repository_protocol.dart';
 import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
 import 'package:anton_zyryanov_barcode_scanner/models/shop/shop_item.dart';
+import 'package:anton_zyryanov_barcode_scanner/services/app_logger.dart';
 
 class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
+  final AppLogger logger;
+
+  GoodsInStockMockRepository({required this.logger});
+
   @override
   Future<ShopItem> retrieveGoodsInStock(String scannedString) async {
+    logger.log(
+      'retrieveGoodsInStock called with: $scannedString',
+      tag: 'GoodsInStockMockRepository',
+    );
     await Future.delayed(Duration(seconds: 3));
+    logger.log('Mock delay complete', tag: 'GoodsInStockMockRepository');
     switch (scannedString) {
       case 'az_barcode_sneakers_1':
+        logger.log(
+          'Returning mock item: Jordan 11 Retro Concord',
+          tag: 'GoodsInStockMockRepository',
+        );
         return ShopItem(
           imageUrl:
               'https://stoneforest.ru/wp-content/uploads/2018/12/krossovki-air-jordan-11-concord.jpg',
@@ -22,6 +36,10 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
           },
         );
       case 'az_barcode_sneakers_2':
+        logger.log(
+          'Returning mock item: Jordan 11 Cherry',
+          tag: 'GoodsInStockMockRepository',
+        );
         return ShopItem(
           imageUrl:
               'https://100wears.com/wp-content/uploads/2022/12/Glam-2-1024x768.jpg',
@@ -36,6 +54,10 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
           },
         );
       case 'az_barcode_sneakers_3':
+        logger.log(
+          'Returning mock item: Jordan 2 Melo',
+          tag: 'GoodsInStockMockRepository',
+        );
         return ShopItem(
           imageUrl:
               'https://5.kixify.com/sites/default/files/imagecache/product_full/product/2019/08/06/p_27385706_153666146_111814.jpg',
@@ -50,6 +72,10 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
           },
         );
       case 'az_barcode_sneakers_4':
+        logger.log(
+          'Returning mock item: Uptempo 96 Gym Red',
+          tag: 'GoodsInStockMockRepository',
+        );
         return ShopItem(
           imageUrl:
               'https://i.pinimg.com/736x/81/33/1f/81331f058149c90b738470b28b224d4a.jpg',
@@ -64,6 +90,10 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
           },
         );
       case 'az_barcode_sneakers_5':
+        logger.log(
+          'Returning mock item: Uptempo 96 Knicks',
+          tag: 'GoodsInStockMockRepository',
+        );
         return ShopItem(
           imageUrl:
               'https://cdn.shopify.com/s/files/1/0221/7290/files/Resize_1_large.jpg?v=1506589011',
@@ -78,6 +108,10 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
           },
         );
       case 'az_barcode_sneakers_6':
+        logger.log(
+          'Returning mock item: Air Force 1 White',
+          tag: 'GoodsInStockMockRepository',
+        );
         return ShopItem(
           imageUrl:
               'https://cdn.sanity.io/images/c1chvb1i/production/65bc97ab0cf434a848f057dad165282d0e4e1e44-1100x735.jpg',
@@ -92,6 +126,10 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
           },
         );
       case 'az_barcode_sneakers_7':
+        logger.log(
+          'Returning mock item: Jordan 9 Lakers',
+          tag: 'GoodsInStockMockRepository',
+        );
         return ShopItem(
           imageUrl:
               'https://sneakernews.com/wp-content/uploads/2016/07/air-jordan-9-kobe-bryant-pe-2016.jpg',
@@ -110,6 +148,10 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
           },
         );
       case 'az_barcode_sneakers_8':
+        logger.log(
+          'Returning mock item: Jordan 13 Flint',
+          tag: 'GoodsInStockMockRepository',
+        );
         return ShopItem(
           imageUrl:
               'https://sneakernews.com/wp-content/uploads/2020/06/air-jordan-13-flint-414571-404-0.jpg',
@@ -124,6 +166,10 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
           },
         );
       case 'az_barcode_sneakers_9':
+        logger.log(
+          'Returning mock item: Jordan 13 Ray Allen',
+          tag: 'GoodsInStockMockRepository',
+        );
         return ShopItem(
           imageUrl:
               '/https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimzhPZJFRqDjcodyCBjGlK_A4w8nNzdEQUz7X_BluvtYeJ0c8Eq2FgGFbIDQLWVVvE2uIlioXBXcWNdXPuHYJ61kTrD8vmTS9jJOa-Ut5kKeyL8XUco_E4oip7L7-arHP9vvc2ruXSnbQ/s1600/air-jordan-retro-13-ray-allen-release-reminder-03.jpg',
@@ -138,6 +184,10 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
           },
         );
       case 'az_barcode_sneakers_10':
+        logger.log(
+          'Returning mock item: Jordan 12 Retro Taxi',
+          tag: 'GoodsInStockMockRepository',
+        );
         return ShopItem(
           imageUrl:
               'https://sneakernews.com/wp-content/uploads/2024/08/air-jordan-12-taxi-2025-release-info-5.jpg',
@@ -152,6 +202,10 @@ class GoodsInStockMockRepository implements GoodsInStockRepositoryProtocol {
           },
         );
       default:
+        logger.error(
+          'Item not found in mock',
+          tag: 'GoodsInStockMockRepository',
+        );
         return ShopItem(
           imageUrl:
               'https://images.icon-icons.com/945/PNG/512/Office_-12_icon-icons.com_73953.png',

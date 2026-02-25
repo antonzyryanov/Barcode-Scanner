@@ -1,5 +1,5 @@
 class AppSettings {
-  bool isMockOn = false;
+  bool isMockOn = true;
   String serverIP = '';
   String serverPort = '3000';
 }

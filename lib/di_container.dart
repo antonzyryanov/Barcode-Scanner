@@ -4,8 +4,9 @@ import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/shop_goods_a
 import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/shop_goods_availability/protocols/goods_in_stock_repository_protocol.dart';
 import 'package:anton_zyryanov_barcode_scanner/bloc/main_bloc/main_bloc.dart';
 import 'package:anton_zyryanov_barcode_scanner/localizations/app_localizations.dart';
-import 'package:anton_zyryanov_barcode_scanner/models/user.dart';
-import 'package:anton_zyryanov_barcode_scanner/widgets/home_page/home_page.dart';
+import 'package:anton_zyryanov_barcode_scanner/models/user/user.dart';
+import 'package:anton_zyryanov_barcode_scanner/services/app_logger.dart';
+import 'package:anton_zyryanov_barcode_scanner/ui/screens/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -23,18 +24,21 @@ class DIContainer {
   }
 
   GoodsInStockRepositoryProtocol createDataLayerWorker() {
+    final logger = AppLogger();
     if (appSettings.isMockOn) {
-      return GoodsInStockMockRepository();
+      return GoodsInStockMockRepository(logger: logger);
     } else {
       return GoodsInStockNetworkRepository(
         serverIP: appSettings.serverIP,
         serverPort: appSettings.serverPort,
+        logger: logger,
       );
     }
   }
 
   Widget buildApp(BuildContext context) {
     final dataWorker = createDataLayerWorker();
+    final logger = AppLogger();
     return MaterialApp(
       onGenerateTitle: (context) => AppLocalizations.of(context).appName,
       localizationsDelegates: const [
@@ -56,7 +60,7 @@ class DIContainer {
         return supportedLocales.first;
       },
       home: BlocProvider(
-        create: (_) => MainBloc(worker: dataWorker, user: user),
+        create: (_) => MainBloc(worker: dataWorker, user: user, logger: logger),
         child: HomePageWidget(),
       ),
     );
