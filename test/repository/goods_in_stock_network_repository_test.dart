@@ -8,17 +8,6 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'goods_in_stock_network_repository_test.mocks.dart';
 
-// Dummy logger for testing
-class _DummyLogger {
-  void log(String message, {String? tag}) {}
-  void error(
-    String message, {
-    String? tag,
-    Object? error,
-    StackTrace? stackTrace,
-  }) {}
-}
-
 // Использован принцип тестирования Роберта Мартина "Red Green Refactor"
 // "Не верь тестам, которые никогда не проваливались"
 // Скриншоты Failed тестов в документации к проекту
