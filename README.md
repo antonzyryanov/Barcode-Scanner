@@ -57,6 +57,12 @@ https://github.com/antonzyryanov/Barcode-Scanner-Backend.git
 		<td><img src="app_screenshots/screenshot_15.jpg" alt="Screenshot 3"></td>
         <td><img src="app_screenshots/screenshot_16.jpg" alt="Screenshot 3"></td>
 	</tr>
+    <tr>
+		<td><img src="app_screenshots/screenshot_17.jpg" alt="Screenshot 1"></td>
+		<td><img src="app_screenshots/screenshot_18.jpg" alt="Screenshot 2"></td>
+		<td><img src="app_screenshots/screenshot_19.jpg" alt="Screenshot 3"></td>
+        <td><img src="app_screenshots/screenshot_20.jpg" alt="Screenshot 3"></td>
+	</tr>
 </table>
 
 ## Штрихкоды для Manual тестов
