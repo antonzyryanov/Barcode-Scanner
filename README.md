@@ -32,35 +32,32 @@ https://github.com/antonzyryanov/Barcode-Scanner-Backend.git
 
 ## Скриншоты приложения
 
-### App Screenshot 1
-![App Screenshot 1](app_screenshots/screen_1.jpg)
-
-### App Screenshot 2
-![App Screenshot 2](app_screenshots/screen_2.jpg)
-
-### App Screenshot 3
-![App Screenshot 3](app_screenshots/screen_3.jpg)
-
-### App Screenshot 4
-![App Screenshot 4](app_screenshots/screen_4.jpg)
-
-### App Screenshot 5
-![App Screenshot 5](app_screenshots/screen_5.jpg)
-
-### App Screenshot 6
-![App Screenshot 6](app_screenshots/screen_6.jpg)
-
-### App Screenshot 7
-![App Screenshot 7](app_screenshots/screen_7.jpg)
-
-### App Screenshot 8
-![App Screenshot 8](app_screenshots/screen_8.jpg)
-
-### App Screenshot 9
-![App Screenshot 9](app_screenshots/screen_9.jpg)
-
-### App Screenshot 10
-![App Screenshot 10](app_screenshots/screen_10.jpg)
+<table>
+	<tr>
+		<td><img src="app_screenshots/screenshot_1.jpg" alt="Screenshot 1"></td>
+		<td><img src="app_screenshots/screenshot_2.jpg" alt="Screenshot 2"></td>
+		<td><img src="app_screenshots/screenshot_3.jpg" alt="Screenshot 3"></td>
+        <td><img src="app_screenshots/screenshot_4.jpg" alt="Screenshot 3"></td>
+	</tr>
+	<tr>
+		<td><img src="app_screenshots/screenshot_5.jpg" alt="Screenshot 1"></td>
+		<td><img src="app_screenshots/screenshot_6.jpg" alt="Screenshot 2"></td>
+		<td><img src="app_screenshots/screenshot_7.jpg" alt="Screenshot 3"></td>
+        <td><img src="app_screenshots/screenshot_8.jpg" alt="Screenshot 3"></td>
+	</tr>
+    <tr>
+		<td><img src="app_screenshots/screenshot_9.jpg" alt="Screenshot 1"></td>
+		<td><img src="app_screenshots/screenshot_10.jpg" alt="Screenshot 2"></td>
+		<td><img src="app_screenshots/screenshot_11.jpg" alt="Screenshot 3"></td>
+        <td><img src="app_screenshots/screenshot_12.jpg" alt="Screenshot 3"></td>
+	</tr>
+	<tr>
+		<td><img src="app_screenshots/screenshot_13.jpg" alt="Screenshot 1"></td>
+		<td><img src="app_screenshots/screenshot_14.jpg" alt="Screenshot 2"></td>
+		<td><img src="app_screenshots/screenshot_15.jpg" alt="Screenshot 3"></td>
+        <td><img src="app_screenshots/screenshot_16.jpg" alt="Screenshot 3"></td>
+	</tr>
+</table>
 
 ## Штрихкоды для Manual тестов
 
