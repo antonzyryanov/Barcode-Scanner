@@ -1,11 +1,23 @@
 import 'dart:convert';
 import 'package:anton_zyryanov_barcode_scanner/bloc/data_layer_bloc/shop_goods_availability/data_repository_impls/goods_in_stock_network_repository.dart';
 import 'package:anton_zyryanov_barcode_scanner/models/shop/shop_item.dart';
+import 'package:anton_zyryanov_barcode_scanner/services/app_logger.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'goods_in_stock_network_repository_test.mocks.dart';
+
+// Dummy logger for testing
+class _DummyLogger {
+  void log(String message, {String? tag}) {}
+  void error(
+    String message, {
+    String? tag,
+    Object? error,
+    StackTrace? stackTrace,
+  }) {}
+}
 
 // Использован принцип тестирования Роберта Мартина "Red Green Refactor"
 // "Не верь тестам, которые никогда не проваливались"
@@ -22,6 +34,7 @@ void main() {
       repository = GoodsInStockNetworkRepository(
         serverIP: '192.168.1.1',
         serverPort: '3000',
+        logger: AppLogger(),
       );
     });
 
@@ -215,7 +228,7 @@ class TestableGoodsInStockNetworkRepository
     required super.serverIP,
     required super.serverPort,
     required this.client,
-  });
+  }) : super(logger: AppLogger());
 
   @override
   Future<ShopItem> retrieveGoodsInStock(String scannedString) async {
