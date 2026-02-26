@@ -39,12 +39,12 @@ class ItemCell extends StatelessWidget {
                 borderRadius: BorderRadius.circular(MediumSpacing.spacing20),
                 child: Image.asset(
                   'assets/images/handbook/sections/$sectionId/${item.id}.png',
-                  height: IconSizingConfig.iconXXLarge,
+                  height: IconSizingConfig.getHandbookCellImageSize(context),
                   fit: BoxFit.contain,
                   errorBuilder: (context, error, stackTrace) {
-                    return const SizedBox(
-                      height: 120,
-                      child: Center(
+                    return SizedBox(
+                      height: IconSizingConfig.getHandbookCellImageSize(context),
+                      child: const Center(
                         child: Icon(Icons.image_not_supported, size: 48),
                       ),
                     );
